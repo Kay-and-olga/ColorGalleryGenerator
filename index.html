@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://kit.fontawesome.com/cb6fbd44a4.js' crossorigin='anonymous'></script>
+    <link href=“https://fonts.googleapis.com/css?family=Lato|Oswald:400,600&display=swap” rel=“stylesheet”>
+    <title>Color Grid Generator</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="wrapper">
+            <h1>Color Grid Generator</h1>
+        </div>
+    </header>
+    <!-- END OF HEADER -->
+
+
+    <!-- MAIN -->
+    <main>
+        <div class="wrapper">
+
+            <!-- COLOR PICKER -->
+            <section class="colorPicker">
+
+                <h2>Pick your color</h2>
+
+                <form action="POST">
+                    <!-- white -->
+                    <label for="white" class="sr-only">White</label>
+                    <input id="white" type="radio" class="colorChoice" name="color" >
+
+                    <!-- black -->
+                    <label for="black" class="sr-only">Black</label>
+                    <input id="black" type="radio" class="colorChoice" name="color">
+
+                    <!-- red -->
+                    <label for="red" class="sr-only">Red</label>
+                    <input id="red" type="radio" class="colorChoice" name="color">
+
+                    <!-- orange -->
+                    <label for="orange" class="sr-only">Orange</label>
+                    <input id="orange" type="radio" class="colorChoice" name="color">
+
+                    <!-- yellow -->
+                    <label for="yellow" class="sr-only">Yellow</label>
+                    <input id="yellow" type="radio" class="colorChoice" name="color">
+
+                    <!-- green -->
+                    <label for="green" class="sr-only">Green</label>
+                    <input id="green" type="radio" class="colorChoice" name="color">
+
+                    <!-- blue -->
+                    <label for="blue" class="sr-only">Blue</label>
+                    <input id="blue" type="radio" class="colorChoice" name="color">
+
+                    <!-- purple -->
+                    <label for="purple" class="sr-only">Purple</label>
+                    <input id="purple" type="radio" class="colorChoice" name="color">
+
+                    <!-- pink -->
+                    <label for="pink" class="sr-only">Pink</label>
+                    <input id="pink" type="radio" class="colorChoice" name="color">
+
+                    <!-- cheese -->
+                    <label for="cheese" class="sr-only">Cheese</label>
+                    <input id="cheese" type="radio" class="colorChoice" name="color">
+
+                </form>
+            </section>
+            <!--END OF COLOR PICKER -->
+
+
+            <!-- GALLERY -->
+            <section class="gallery">
+
+                <h2>Your gallery</h2>
+
+                <div class="galleryGrid">
+                    <!-- dynamically populated with images -->
+                </div>
+
+            </section>
+            <!-- END OF GALLERY -->
+
+
+            <!-- SLIDERS -->
+            <section class="sliders">
+
+                <h2>Adjust your grid</h2>
+
+                <form action="POST">
+
+                    <label for="rows" >Rows</label>
+                    <input id="rows" type="range" name="gridSlider" min="2" max="5" steps="4">
+
+                    <label for="columns">Columns</label>
+                    <input id="columns" type="range" name="gridSlider" min="2" max="5" steps="4">
+
+                    <label for="gap">Gap</label>
+                    <input id="gap" type="range" name="gridSlider" min='5' max='40' steps="8">
+
+                </form>
+
+            </section>
+            <!-- END OF SLIDERS -->
+
+
+            <!-- CODE -->
+            <section class="code">
+
+                <h2>Grab your code</h2>
+
+                <div class="htmlBlock">
+                    <!-- dynamically populated with HTML code -->
+                </div>
+
+                <div class="cssBlock">
+                    <!-- dynamically populated with CSS code -->
+                </div>
+
+            </section>
+            <!-- END OF CODE -->
+
+        </div>
+
+    </main>
+    <!-- END OF MAIN -->
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="social">
+            <p>Kay</p>
+            <ul>
+                <li>
+                    <a href="https://www.kaystocks.com/">
+                        <i class="fas fa-external-link-alt" aria-label="Kay's website"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/kaay_evans">
+                        <i class="fab fa-twitter" aria-label="Kay's Twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/kayevans">
+                        <i class="fab fa-github" aria-label="Kay's GitHub"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="social">
+            <p>Olga Filiushkina</p>
+            <ul>
+                <li>
+                    <!-- Website -->
+                    <a href="http://olgafil.com/"><i class="fas fa-external-link-alt" aria-label="Olga's website"></i></a>
+                </li>
+                <li>
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/OlgaFilCodes"><i class="fab fa-twitter" aria-label="Olga's Twitter"></i></a>
+                </li>
+                <li>
+                    <!-- Codepen -->
+                    <a href="https://codepen.io/OlgaFil"><i class="fab fa-codepen" aria-label="Olga's Codepen"></i></a>
+                </li>
+                <li>
+                    <!-- GitHub -->
+                    <a href="https://github.com/Olcatsy"><i class="fab fa-github" aria-label="Olga's GitHub"></i></a>
+                </li>
+            </ul>
+        </div>
+
+
+    </footer>
+    <!-- FOOTER -->
+
+</body>
+</html>
