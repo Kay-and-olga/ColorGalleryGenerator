@@ -2,20 +2,48 @@
 section{
     background-color: $primaryColour;
     padding: 20px;
+
+    h2{
+        font-size: 2.5rem;
+    }
 }
 
+
+// add grid layout
 main .wrapper{
     display: grid;
     grid-template-rows: 20% repeat(2, 1fr);
     grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
     grid-template-areas: 
         ". picker picker ."
         "gallery gallery sliders sliders"
         "gallery gallery code code";
 }
 
+// dedicate each section to an area
 .colorPicker{
     grid-area: picker;
+    @include flex(row, space-between, center);
+
+    input[type='radio']{
+        position: relative;
+        opacity: 0;
+
+    }
+
+    input[type='radio']::before{
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
 }
 
 .gallery{
@@ -24,8 +52,13 @@ main .wrapper{
 
 .sliders{
     grid-area: sliders;
+
+    form{
+        @include flex(column, center, center);
+    }
 }
 
 .code{
     grid-area: code;
 }
+
