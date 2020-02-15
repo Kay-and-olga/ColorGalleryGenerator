@@ -1,0 +1,31 @@
+// styles for the sections
+section{
+    background-color: $primaryColour;
+    padding: 20px;
+}
+
+main .wrapper{
+    display: grid;
+    grid-template-rows: 20% repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        ". picker picker ."
+        "gallery gallery sliders sliders"
+        "gallery gallery code code";
+}
+
+.colorPicker{
+    grid-area: picker;
+}
+
+.gallery{
+    grid-area: gallery;
+}
+
+.sliders{
+    grid-area: sliders;
+}
+
+.code{
+    grid-area: code;
+}

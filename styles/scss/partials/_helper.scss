@@ -1,0 +1,29 @@
+// VARIABLES
+
+// COLOURS
+$primaryColour: #EEF3F6;
+$secondaryColour: #D2DBE0;
+$fontColour: #434960;
+
+// FONTS
+$headingFont: 'Oswald', sans-serif;
+$bodyFont: 'Lato', sans-serif;
+
+// MIXINS
+
+// for flexbox
+@mixin flex($flexDirection: initial, $justifyContent: initial, $alignItems: initial){
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: $flexDirection;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+// add hover and focus states
+@mixin hover(){
+    &:hover,
+    &:focus{
+        @content;
+    }
+}

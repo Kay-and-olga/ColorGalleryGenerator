@@ -1,0 +1,60 @@
+// remove default padding and margin
+*,
+h1{
+    padding: 0;
+    margin: 0;
+}
+
+// image styles
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+// default body size
+html{
+    font-size: 62.5%;
+}
+
+// removes the bullets
+ul{
+    list-style-type: none;
+}
+
+// remove the default styling of links
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+// button styles
+button{
+    border: none;
+    cursor: pointer;
+}
+
+// wrapper styles
+.wrapper{
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+// default body styles
+body{
+    font-family: $bodyFont;
+    color: $fontColour;
+    font-size: 2rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+// heading styles
+h1,
+h2{
+    font-family: $headingFont;
+    text-transform: uppercase;
+    font-weight: 400;
+}

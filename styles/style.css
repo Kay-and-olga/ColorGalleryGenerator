@@ -234,3 +234,104 @@ html {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+*,
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #434960;
+  font-size: 2rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+h1,
+h2 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+header {
+  text-align: center;
+  padding: 15px 0 20px;
+}
+
+section {
+  background-color: #EEF3F6;
+  padding: 20px;
+}
+
+main .wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 20% (1fr)[2];
+      grid-template-rows: 20% repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: ". picker picker ." "gallery gallery sliders sliders" "gallery gallery code code";
+}
+
+.colorPicker {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: picker;
+}
+
+.gallery {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: gallery;
+}
+
+.sliders {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: sliders;
+}
+
+.code {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: code;
+}
