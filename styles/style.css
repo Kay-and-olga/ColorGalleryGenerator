@@ -334,21 +334,8 @@ main .wrapper {
           align-items: center;
 }
 
-.colorPicker input[type='radio'] {
+.colorPicker input[type="radio"] {
   position: relative;
-  opacity: 0;
-}
-
-.colorPicker input[type='radio']::before {
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: black;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
 }
 
 .gallery {

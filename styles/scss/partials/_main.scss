@@ -25,26 +25,29 @@ main .wrapper{
 .colorPicker{
     grid-area: picker;
     @include flex(row, space-between, center);
-
-    input[type='radio']{
+    
+    input[type="radio"]{
         position: relative;
-        opacity: 0;
+        // opacity: 0;
 
     }
 
-    input[type='radio']::before{
-        content: '';
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: black;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-    }
+    // LOOK INTO WHY IT ISNT WORKING
+    // input[type="radio"]::before{
+    //     content: "";
+    //     display: block;
+    //     width: 20px;
+    //     height: 20px;
+    //     border-radius: 50%;
+    //     background-color: black;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     z-index: 10;
+    // }
 
 }
+
 
 .gallery{
     grid-area: gallery;
