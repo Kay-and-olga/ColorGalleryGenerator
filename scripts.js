@@ -6,13 +6,12 @@
 
 // The HTML and CSS of the grid container are retrieved with .html() and.css() methods, these values are stored in variables, which are then appended to containers displaying code.The user can copy the code with ctrl + c(Stretch goal: add a button that will copy the whole code block to clipboard on click)
 
-
-
 // namespace object
 const app = {};
 
 // our api key
 app.apiKey = '_3kOV9_qSimG_aJSFZFK_u2AIEsu5eyM4HAFOQ-OB-Y';
+app.apiKeyKay = 'kAOrK_X8Er74XeTEqGJae_ti3NK45tPvRRpxrT-2U7M';
 
 // make function for when user selects a colour
 app.chooseColor = function(){
@@ -33,9 +32,10 @@ app.chooseColor = function(){
 // make function to display the images in grid
 app.displayImages = function(array){
 
+    // for each item in array, display the images
     array.forEach(function(currentItem){
         // make variable for the image
-        const imageUrl = currentItem.urls.full;
+        const imageUrl = currentItem.urls.regular;
         // make variable for the alt
         const altText = currentItem.alt_description;
 
@@ -57,16 +57,17 @@ app.getImages = function(color){
         method: 'GET',
         dataType: 'json',
         data: {
-            client_id: app.apiKey,
+            client_id: app.apiKeyKay,
             query: `${color}`,
             count: 10,
-        }
+            orientation: 'landscape',
+        },
     }).then(function(images){
-
+        console.log(images)
+        // call function to display images
         app.displayImages(images);
     })
 }
-
 
 // initializing function
 app.init = function(){

@@ -51,6 +51,20 @@ main .wrapper{
 
 .gallery{
     grid-area: gallery;
+
+    img{
+        object-fit: cover;
+    }
+
+    .galleryGrid{
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5px;
+        
+
+
+    }
 }
 
 .sliders{
