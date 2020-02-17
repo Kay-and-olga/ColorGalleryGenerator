@@ -9,30 +9,32 @@ section{
 }
 
 
-// add grid layout
+// grid layout for the page
 main .wrapper{
     display: grid;
     grid-template-rows: 20% repeat(2, 1fr);
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     grid-template-areas: 
+    //? this works quite well if the third column is gallery too 
         ". picker picker ."
         "gallery gallery sliders sliders"
         "gallery gallery code code";
+    padding-bottom: 100%;
 }
 
-// dedicate each section to an area
+
 .colorPicker{
+    // dedicates the section to a grid area
     grid-area: picker;
     @include flex(row, space-between, center);
     
     input[type="radio"]{
         position: relative;
         // opacity: 0;
-
     }
 
-    // LOOK INTO WHY IT ISNT WORKING
+    // LOOK INTO WHY IT ISN'T WORKING
     // input[type="radio"]::before{
     //     content: "";
     //     display: block;
@@ -50,24 +52,27 @@ main .wrapper{
 
 
 .gallery{
+    // dedicates the section to a grid area
     grid-area: gallery;
 
-    img{
-        object-fit: cover;
-    }
-
     .galleryGrid{
+        // Grid rows, columns and gap can be adjusted with jquery ~OLGA
         display: grid;
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 5px;
-        
 
-
+        .galleryImg {
+        // makes the images take up the whole cell of the grid ~OLGA
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
     }
 }
 
 .sliders{
+    // dedicates the section to a grid area
     grid-area: sliders;
 
     form{
@@ -76,6 +81,7 @@ main .wrapper{
 }
 
 .code{
+    // dedicates the section to a grid area
     grid-area: code;
 }
 
