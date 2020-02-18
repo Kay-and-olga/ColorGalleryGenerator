@@ -17,34 +17,14 @@ main .wrapper{
     grid-gap: 20px;
     grid-template-areas: 
         ". picker picker ."
-        "gallery gallery sliders sliders"
-        "gallery gallery code code";
+        "gallery gallery gallery sliders"
+        "gallery gallery gallery code";
 }
 
 // dedicate each section to an area
 .colorPicker{
     grid-area: picker;
     @include flex(row, space-between, center);
-    
-    input[type="radio"]{
-        position: relative;
-        // opacity: 0;
-
-    }
-
-    // LOOK INTO WHY IT ISNT WORKING
-    // input[type="radio"]::before{
-    //     content: "";
-    //     display: block;
-    //     width: 20px;
-    //     height: 20px;
-    //     border-radius: 50%;
-    //     background-color: black;
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     z-index: 10;
-    // }
 
 }
 
@@ -52,18 +32,12 @@ main .wrapper{
 .gallery{
     grid-area: gallery;
 
-    img{
-        object-fit: cover;
-    }
-
     .galleryGrid{
         display: grid;
         grid-template-rows: repeat(5, 1fr);
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 5px;
         
-
-
     }
 }
 
