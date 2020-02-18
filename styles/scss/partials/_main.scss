@@ -8,22 +8,28 @@ section{
     }
 }
 
-// add grid layout
+
+
+// grid layout for the page
 main .wrapper{
     display: grid;
     grid-template-rows: 20% repeat(2, 1fr);
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     grid-template-areas: 
+    //? this works quite well if the third column is gallery too 
         ". picker picker ."
         "gallery gallery gallery sliders"
         "gallery gallery gallery code";
+    padding-bottom: 100%;
 }
 
 .colorPicker{
+    // dedicates the section to a grid area
     grid-area: picker;
     @include flex(row, space-between, center);
     
+
     form{
         @include flex(row, space-between, center);
         width: 60%;
@@ -92,27 +98,34 @@ main .wrapper{
         // found on: https://www.creativejuiz.fr/blog/en/tutorials/customize-checkbox-and-radio-button-with-css
         box-shadow: inset 0 1px 5px rgba(0,0,0, .1), 0 0 0 5px rgb(210, 219, 224);
     }
+
 }
 
 
 // gallery section styles
 .gallery{
+    // dedicates the section to a grid area
     grid-area: gallery;
 
-    // styles for the appended images
     .galleryGrid{
+        // Grid rows, columns and gap can be adjusted with jquery ~OLGA
         display: grid;
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 5px;
-        
 
-
+        .galleryImg {
+        // makes the images take up the whole cell of the grid ~OLGA
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        }
     }
 }
 
 // sliders styles
 .sliders{
+    // dedicates the section to a grid area
     grid-area: sliders;
 
     // flex the items into column
@@ -123,6 +136,7 @@ main .wrapper{
 
 // code section styles
 .code{
+    // dedicates the section to a grid area
     grid-area: code;
 }
 

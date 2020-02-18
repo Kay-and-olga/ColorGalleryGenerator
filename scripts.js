@@ -13,6 +13,14 @@ const app = {};
 app.apiKey = '_3kOV9_qSimG_aJSFZFK_u2AIEsu5eyM4HAFOQ-OB-Y';
 app.apiKeyKay = 'kAOrK_X8Er74XeTEqGJae_ti3NK45tPvRRpxrT-2U7M';
 
+
+// variables to hold code blocks to display and allow the user to copy ~OLGA
+app.gridCodeHTML;
+app.gridCodeCSS;
+
+
+// we can write a function to select amount of images ('count' in the ajax call), and choose orientation ('orientation' in the ajax call). The question is do we need separate functions for these ajax calls or can we condense them into one and just pass parameters? ~OLGA
+
 // make function for when user selects a colour
 app.chooseColor = function(){
 
@@ -41,15 +49,17 @@ app.displayImages = function(array){
 
         // the html to append
         const htmlToAppend = `
-            <img src='${imageUrl} alt='${altText}'>
+            <img class="galleryImg" src='${imageUrl} alt='${altText}'>
         `;
-
+        console.log(htmlToAppend);
         // append the html to the page
         $('.galleryGrid').append(htmlToAppend);
     })
 }
 
 // make function to get images from api
+// gotta make sure the grid is full when the page loads (random selection of images or should we set it?) ~OLGA
+// I also want to add the option to add the amount of images loaded and to choose the orientation, to make the grid more even ~OLGA
 app.getImages = function(color){
 
     $.ajax({
@@ -60,7 +70,7 @@ app.getImages = function(color){
             client_id: app.apiKeyKay,
             query: `${color}`,
             count: 10,
-            orientation: 'landscape',
+            // orientation: 'squarish',
         },
     }).then(function(images){
         console.log(images)
