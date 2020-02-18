@@ -9,6 +9,9 @@ $fontColour: #434960;
 $headingFont: 'Oswald', sans-serif;
 $bodyFont: 'Lato', sans-serif;
 
+// OTHER
+$transition: all 0.5s ease;
+
 // MIXINS
 
 // for flexbox
@@ -27,3 +30,5 @@ $bodyFont: 'Lato', sans-serif;
         @content;
     }
 }
+
+

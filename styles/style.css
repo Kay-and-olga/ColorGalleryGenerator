@@ -309,7 +309,9 @@ main .wrapper {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-      grid-template-areas: ". picker picker ." "gallery gallery sliders sliders" "gallery gallery code code";
+      grid-template-areas: ". picker picker ."
+ "gallery gallery gallery sliders"
+ "gallery gallery gallery code";
   padding-bottom: 100%;
 }
 
@@ -335,15 +337,93 @@ main .wrapper {
           align-items: center;
 }
 
-.colorPicker input[type="radio"] {
-  position: relative;
+.colorPicker form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+}
+
+.colorPicker label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #434960;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.colorPicker label.white {
+  background-color: #fff;
+}
+
+.colorPicker label.black {
+  background-color: #000;
+}
+
+.colorPicker label.red {
+  background-color: #f18d8d;
+}
+
+.colorPicker label.orange {
+  background-color: #f5c66f;
+}
+
+.colorPicker label.yellow {
+  background-color: #f5f580;
+}
+
+.colorPicker label.green {
+  background-color: #87d687;
+}
+
+.colorPicker label.blue {
+  background-color: #a4d4eb;
+}
+
+.colorPicker label.purple {
+  background-color: #d9c0f1;
+}
+
+.colorPicker label.pink {
+  background-color: #fddde2;
+}
+
+.colorPicker label.cheese {
+  background-color: orange;
+}
+
+.colorPicker input[type='radio'] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.colorPicker input[type='radio']:hover + label,
+.colorPicker input[type='radio']:focus + label {
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1), 0 0 0 5px #d2dbe0;
+          box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1), 0 0 0 5px #d2dbe0;
 }
 
 .gallery {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 3;
   grid-area: gallery;
 }
 
@@ -366,8 +446,7 @@ main .wrapper {
 
 .sliders {
   -ms-grid-row: 2;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 4;
   grid-area: sliders;
 }
 
@@ -391,8 +470,7 @@ main .wrapper {
 
 .code {
   -ms-grid-row: 3;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 4;
   grid-area: code;
 }
 
