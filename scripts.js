@@ -128,8 +128,9 @@ app.getImages = function(){
 app.changeColumns = function() {
     $('#columns').on('change', function() {
 
+        // stores the amount of columns chosen by the user
         const columnAmount = parseInt($(this).val());
-        console.log(columnAmount);
+        // updates the gallery container's styles
         $('.galleryGrid').css('grid-template-columns', `repeat(${columnAmount}, 1fr`);
     })
 }
@@ -139,12 +140,29 @@ app.changeColumns = function() {
 app.changeGap = function() {
     $('#gap').on('change', function() {
 
+        // stores the amount of columns chosen by the user
         const gapAmount = parseInt($(this).val());
-        console.log(gapAmount);
+        // updates the gallery container's styles
         $('.galleryGrid').css('grid-gap', `${gapAmount}px`);
     })
 }
 // END OF FUNCTIONS THAT DEAL WITH STYLING THE GRID
+
+
+// FUNCTIONS THAT DEAL WITH DISPLAYING CODE
+app.getCode = function() {
+    // app.gridCodeHTML = $('.galleryGrid').html();
+    // console.log(app.gridCodeHTML);
+
+    app.gridCodeCSS = $('.galleryGrid').css();
+    console.log(app.gridCodeCSS);
+}
+
+
+
+// END OF FUNCTIONS THAT DEAL WITH DISPLAYING CODE
+
+
 
 
 
@@ -163,6 +181,8 @@ app.init = function(){
     app.changeColumns();
     // change the size of grid gap
     app.changeGap();
+
+    // app.getCode();
 }
 
 // document ready
