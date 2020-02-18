@@ -96,11 +96,17 @@
 
                 <form action="POST">
 
-                    <label for="columns">Columns</label>
-                    <input id="columns" type="range" name="gridSlider" min="2" max="5" steps="4">
+                    <div class="columnSlideContainer">
+                        <label for="columns">Columns</label>
+                        <p id="columnAmount"></p>
+                    </div>
+                    <input id="columns" type="range" name="gridSlider" min="2" max="5" value="3">
 
-                    <label for="gap">Gap</label>
-                    <input id="gap" type="range" name="gridSlider" min='5' max='40' steps="8">
+                    <div class="gapSlideContainer">
+                        <label for="gap">Gap</label>
+                        <p id="gapAmount"></p>
+                    </div>
+                    <input id="gap" type="range" name="gridSlider" min='5' max='40' step="5" value="5">
 
                     <fieldset>
                         <legend>Choose orientation</legend>

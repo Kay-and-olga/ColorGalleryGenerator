@@ -281,7 +281,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+legend {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
@@ -305,12 +306,12 @@ main .wrapper {
   padding-bottom: 100px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 20% (1fr)[4];
-      grid-template-rows: 20% repeat(4, 1fr);
+  -ms-grid-rows: 20% (1fr)[2];
+      grid-template-rows: 20% repeat(2, 1fr);
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-      grid-template-areas: ". picker picker ." "gallery gallery sliders sliders" "gallery gallery code code";
+      grid-template-areas: ". picker picker ." "gallery gallery gallery sliders" "gallery gallery gallery code";
 }
 
 .colorPicker {
@@ -421,7 +422,7 @@ main .wrapper {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 3;
   grid-area: gallery;
 }
 
@@ -444,12 +445,12 @@ main .wrapper {
 
 .sliders {
   -ms-grid-row: 2;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 4;
   grid-area: sliders;
 }
 
 .sliders form {
+  padding-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -467,10 +468,47 @@ main .wrapper {
           align-items: center;
 }
 
+.sliders fieldset {
+  border: none;
+}
+
+.sliders label,
+.sliders p {
+  font-size: 1.6rem;
+}
+
+.sliders .columnSlideContainer,
+.sliders .gapSlideContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sliders .columnSlideContainer label,
+.sliders .gapSlideContainer label {
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.sliders legend {
+  text-align: center;
+}
+
 .code {
   -ms-grid-row: 3;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 4;
   grid-area: code;
 }
 

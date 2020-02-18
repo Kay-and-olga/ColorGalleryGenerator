@@ -17,10 +17,10 @@ main .wrapper{
     grid-gap: 20px;
     grid-template-areas: 
         ". picker picker ."
-        // "gallery gallery gallery sliders"
-        // "gallery gallery gallery code";
-        "gallery gallery sliders sliders"
-        "gallery gallery code code";
+        "gallery gallery gallery sliders"
+        "gallery gallery gallery code";
+        // "gallery gallery sliders sliders"
+        // "gallery gallery code code";
         
 }
 
@@ -125,7 +125,33 @@ main .wrapper{
 
     // flex the items into column
     form{
+        padding-top: 20px;
         @include flex(column, center, center);
+    }
+
+    fieldset{
+        border: none;
+    }
+
+    label,
+    p{
+        font-size: 1.6rem;
+        
+    }
+
+    .columnSlideContainer,
+    .gapSlideContainer{
+        @include flex(row, flex-end, center);
+    }
+
+    .columnSlideContainer label,
+    .gapSlideContainer label{
+        text-transform: uppercase;
+        margin-right: 10px;
+    }
+
+    legend{
+        text-align: center;
     }
 }
 

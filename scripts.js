@@ -107,7 +107,7 @@ app.getImages = function(){
         method: 'GET',
         dataType: 'json',
         data: {
-            client_id: app.apiKey,
+            client_id: app.apiKeyKay,
             query: `${app.imageColor}`,
             count: `${app.imageAmount}`,
             orientation: `${app.imageOrientation}`,
@@ -131,6 +131,9 @@ app.changeColumns = function() {
         const columnAmount = parseInt($(this).val());
         console.log(columnAmount);
         $('.galleryGrid').css('grid-template-columns', `repeat(${columnAmount}, 1fr`);
+
+        // call the show slider input function
+        app.showSliderInput();
     })
 }
 
@@ -142,14 +145,29 @@ app.changeGap = function() {
         const gapAmount = parseInt($(this).val());
         console.log(gapAmount);
         $('.galleryGrid').css('grid-gap', `${gapAmount}px`);
+
+        // call the show slider input function
+        app.showSliderInput();
     })
 }
 // END OF FUNCTIONS THAT DEAL WITH STYLING THE GRID
 
+// function that displays the value of the slider inputs
+app.showSliderInput = function(){
+    // save them in variables
+    let columnValue = $('input#columns').val();
+    let gapValue = $('input#gap').val();
 
+    // append on page
+    $('#columnAmount').text(`${columnValue}`);
+    $('#gapAmount').text(`${gapValue}`);
+}
 
 // initializing function
 app.init = function(){
+
+    // show the value of the sliderinputs
+    app.showSliderInput();
     // loads images into the grid on page load
     app.getImages();
     // call function for when the user selects a colour
