@@ -17,8 +17,8 @@ main .wrapper{
     grid-gap: 20px;
     grid-template-areas: 
         ". picker picker ."
-        "gallery gallery gallery sliders"
-        "gallery gallery gallery code";
+        "gallery gallery sliders sliders"
+        "gallery gallery code code";
 }
 
 // dedicate each section to an area
