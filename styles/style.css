@@ -309,7 +309,7 @@ main .wrapper {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-      grid-template-areas: ". picker picker ." "gallery gallery sliders sliders" "gallery gallery code code";
+      grid-template-areas: ". picker picker ." "gallery gallery gallery sliders" "gallery gallery gallery code";
 }
 
 .colorPicker {
@@ -420,13 +420,8 @@ main .wrapper {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 3;
   grid-area: gallery;
-}
-
-.gallery img {
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .gallery .galleryGrid {
@@ -441,8 +436,7 @@ main .wrapper {
 
 .sliders {
   -ms-grid-row: 2;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 4;
   grid-area: sliders;
 }
 
@@ -466,8 +460,7 @@ main .wrapper {
 
 .code {
   -ms-grid-row: 3;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 4;
   grid-area: code;
 }
 

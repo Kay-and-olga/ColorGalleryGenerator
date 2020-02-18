@@ -16,11 +16,10 @@ main .wrapper{
     grid-gap: 20px;
     grid-template-areas: 
         ". picker picker ."
-        "gallery gallery sliders sliders"
-        "gallery gallery code code";
+        "gallery gallery gallery sliders"
+        "gallery gallery gallery code";
 }
 
-// color picker styles
 .colorPicker{
     grid-area: picker;
     @include flex(row, space-between, center);
@@ -99,10 +98,6 @@ main .wrapper{
 // gallery section styles
 .gallery{
     grid-area: gallery;
-
-    img{
-        object-fit: cover;
-    }
 
     // styles for the appended images
     .galleryGrid{
