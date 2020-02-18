@@ -8,7 +8,6 @@ section{
     }
 }
 
-
 // add grid layout
 main .wrapper{
     display: grid;
@@ -21,34 +20,83 @@ main .wrapper{
         "gallery gallery code code";
 }
 
-// dedicate each section to an area
+// color picker styles
 .colorPicker{
     grid-area: picker;
     @include flex(row, space-between, center);
     
-    input[type="radio"]{
-        position: relative;
-        // opacity: 0;
-
+    form{
+        @include flex(row, space-between, center);
+        width: 60%;
     }
 
-    // LOOK INTO WHY IT ISNT WORKING
-    // input[type="radio"]::before{
-    //     content: "";
-    //     display: block;
-    //     width: 20px;
-    //     height: 20px;
-    //     border-radius: 50%;
-    //     background-color: black;
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     z-index: 10;
-    // }
+    label{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid $fontColour;
+        transition: $transition;
 
+        &.white{
+            background-color: #fff;
+        }
+
+        &.black{
+            background-color: #000;
+        }
+
+        &.red{
+            background-color: rgb(241, 141, 141);
+        }
+
+        &.orange{
+            background-color: rgb(245, 198, 111);
+        }
+
+        &.yellow{
+            background-color: rgb(245, 245, 128);
+        }
+
+        &.green{
+            background-color: rgb(135, 214, 135);
+        }
+
+        &.blue{
+            background-color: rgb(164, 212, 235);
+        }
+
+        &.purple{
+            background-color: rgb(217, 192, 241);
+        }
+
+        &.pink{
+            background-color: rgb(253, 221, 226);
+        }
+
+        &.cheese{
+            background-color: orange;
+        }
+    }
+    
+    // accesible hiding of radio button
+    input[type='radio']{
+        opacity: 0;
+        position: fixed;
+        width: 0;
+    }
+    
+    // add focus and hover events on the label
+    input[type='radio']:hover + label,
+    input[type='radio']:focus + label{
+        cursor: pointer;
+        // found on: https://www.creativejuiz.fr/blog/en/tutorials/customize-checkbox-and-radio-button-with-css
+        box-shadow: inset 0 1px 5px rgba(0,0,0, .1), 0 0 0 5px rgb(210, 219, 224);
+    }
 }
 
 
+// gallery section styles
 .gallery{
     grid-area: gallery;
 
@@ -56,6 +104,7 @@ main .wrapper{
         object-fit: cover;
     }
 
+    // styles for the appended images
     .galleryGrid{
         display: grid;
         grid-template-rows: repeat(5, 1fr);
@@ -67,14 +116,17 @@ main .wrapper{
     }
 }
 
+// sliders styles
 .sliders{
     grid-area: sliders;
 
+    // flex the items into column
     form{
         @include flex(column, center, center);
     }
 }
 
+// code section styles
 .code{
     grid-area: code;
 }
