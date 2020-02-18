@@ -267,7 +267,7 @@ button {
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 2000px;
   width: 90%;
   margin: 0 auto;
 }
@@ -302,23 +302,15 @@ section h2 {
 }
 
 main .wrapper {
+  padding-bottom: 100px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 20% (1fr)[2];
-      grid-template-rows: 20% repeat(2, 1fr);
+  -ms-grid-rows: 20% (1fr)[4];
+      grid-template-rows: 20% repeat(4, 1fr);
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-      grid-template-areas: ". picker picker ." "gallery gallery gallery sliders" "gallery gallery gallery code";
-=======
-      grid-template-areas: ". picker picker ." "gallery gallery sliders sliders" "gallery gallery code code";
-  padding-bottom: 100%;
->>>>>>> 1658061f7c6566fbd682a26d4cd62c88c1c376a1
-=======
-      grid-template-areas: ". picker picker ." "gallery gallery gallery sliders" "gallery gallery gallery code";
->>>>>>> radioInputs
+      grid-template-areas: ". picker picker ." "gallery gallery sliders sliders" "gallery gallery code code";
 }
 
 .colorPicker {
@@ -343,8 +335,6 @@ main .wrapper {
           align-items: center;
 }
 
-<<<<<<< HEAD
-=======
 .colorPicker form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -427,26 +417,25 @@ main .wrapper {
           box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1), 0 0 0 5px #d2dbe0;
 }
 
->>>>>>> radioInputs
 .gallery {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
+  -ms-grid-column-span: 2;
   grid-area: gallery;
 }
 
-.gallery .galleryGrid {
+.galleryGrid {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (1fr)[3];
       grid-template-rows: repeat(3, 1fr);
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
 }
 
-.gallery .galleryGrid .galleryImg {
+.galleryImg {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -455,7 +444,8 @@ main .wrapper {
 
 .sliders {
   -ms-grid-row: 2;
-  -ms-grid-column: 4;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
   grid-area: sliders;
 }
 
@@ -479,7 +469,8 @@ main .wrapper {
 
 .code {
   -ms-grid-row: 3;
-  -ms-grid-column: 4;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
   grid-area: code;
 }
 

@@ -96,14 +96,27 @@
 
                 <form action="POST">
 
-                    <label for="rows" >Rows</label>
-                    <input id="rows" type="range" name="gridSlider" min="2" max="5" steps="4">
-
                     <label for="columns">Columns</label>
                     <input id="columns" type="range" name="gridSlider" min="2" max="5" steps="4">
 
                     <label for="gap">Gap</label>
                     <input id="gap" type="range" name="gridSlider" min='5' max='40' steps="8">
+
+                    <fieldset>
+                        <legend>Choose orientation</legend>
+
+                        <input type="radio" name="orientation" id="square" value="squarish">
+                        <label for="square">Square</label>
+
+                        <input type="radio" name="orientation" id="landscape" value="landscape">
+                        <label for="landscape">Landscape</label>
+
+                        <input type="radio" name="orientation" id="portrait" value="portrait">
+                        <label for="portrait">Portrait</label>
+                    </fieldset>
+                    
+                    <label for="imageNumber">Amount of images</label>
+                    <input type="number" name="imageNumber" id="imageNumber" min="5" max="20">
 
                 </form>
 
