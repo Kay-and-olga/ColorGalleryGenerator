@@ -128,8 +128,9 @@ app.getImages = function(){
 app.changeColumns = function() {
     $('#columns').on('change', function() {
 
+        // stores the amount of columns chosen by the user
         const columnAmount = parseInt($(this).val());
-        console.log(columnAmount);
+        // updates the gallery container's styles
         $('.galleryGrid').css('grid-template-columns', `repeat(${columnAmount}, 1fr`);
 
         // call the show slider input function
@@ -142,8 +143,9 @@ app.changeColumns = function() {
 app.changeGap = function() {
     $('#gap').on('change', function() {
 
+        // stores the amount of columns chosen by the user
         const gapAmount = parseInt($(this).val());
-        console.log(gapAmount);
+        // updates the gallery container's styles
         $('.galleryGrid').css('grid-gap', `${gapAmount}px`);
 
         // call the show slider input function
@@ -181,6 +183,8 @@ app.init = function(){
     app.changeColumns();
     // change the size of grid gap
     app.changeGap();
+
+    // app.getCode();
 }
 
 // document ready
