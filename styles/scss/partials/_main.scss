@@ -2,6 +2,8 @@
 section{
     background-color: $primaryColour;
     padding: 20px;
+    border-radius: 11px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
 
     h2{
         font-size: 2.5rem;
@@ -24,6 +26,7 @@ main .wrapper{
         
 }
 
+// color picker styles
 .colorPicker{
     grid-area: picker;
     @include flex(row, space-between, center);
@@ -129,9 +132,11 @@ main .wrapper{
         @include flex(column, center, center);
     }
 
-    // remove the fieldset border
+    // remove the fieldset border and the spacing
     fieldset{
         border: none;
+        padding: 0;
+
     }
 
     // change size of the labels
