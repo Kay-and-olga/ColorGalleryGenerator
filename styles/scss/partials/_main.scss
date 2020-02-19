@@ -170,9 +170,6 @@ main .wrapper{
             cursor: pointer;
         }
 
-
-
-
     }
 
     // change size of the labels
@@ -180,8 +177,13 @@ main .wrapper{
         font-size: 1.8rem;
         text-transform: lowercase;
         margin-bottom: 10px;
-    }
 
+        // change styles of the number label
+        &.imageNumber{
+            text-transform: uppercase;
+            font-size: inherit;
+        }
+    }
 }
 
 // flex the items in the containers
@@ -239,6 +241,21 @@ input[type='range']:focus::-moz-range-thumb,
 input[type='range']:hover::-webkit-slider-thumb,
 input[type='range']:focus::-webkit-slider-thumb{
     box-shadow: inset 0 1px 5px rgba(0,0,0, .1), 0 0 0 5px rgba(210, 219, 224, 0.589);
+}
+
+// number input styles
+input[type='number']{
+    border-radius: 11px;
+    border: 1px solid white;
+    height: 40px;
+    width: 90%;
+    padding:0 10px;
+    font-size: 1.6rem;
+    transition: $transition;
+
+    @include hover{
+        border: 1px solid $fontColour;
+    }
 }
 
 

@@ -54,7 +54,8 @@ body{
 // heading styles
 h1,
 h2,
-legend{
+legend,
+label.imageNumber{
     font-family: $headingFont;
     text-transform: uppercase;
     font-weight: 400;
