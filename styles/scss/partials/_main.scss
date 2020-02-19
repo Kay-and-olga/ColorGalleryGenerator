@@ -161,10 +161,8 @@ main .wrapper{
     font-size: 1.2rem;
 }
 
-// change the width of the input range
 // styles and removing default followed guide from: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
-.columnSlideContainer input,
-.gapSlideContainer input{
+input[type='range']{
     // removes styling so can make custom
     -webkit-appearance: none;
     // specific width needed for FF
@@ -189,15 +187,16 @@ main .wrapper{
         height: 12px;
         background-color: $primaryColour;
         border: 2px solid $fontColour;
+        transition: $transition;
     }
 
 }
 
 // add focus states to the thumb
-.columnSlideContainer input:hover::-moz-range-thumb,
-.columnSlideContainer input:focus::-moz-range-thumb,
-.columnSlideContainer input:hover::-webkit-slider-thumb,
-.columnSlideContainer input:focus::-webkit-slider-thumb{
+input[type='range']:hover::-moz-range-thumb,
+input[type='range']:focus::-moz-range-thumb,
+input[type='range']:hover::-webkit-slider-thumb,
+input[type='range']:focus::-webkit-slider-thumb{
     box-shadow: inset 0 1px 5px rgba(0,0,0, .1), 0 0 0 5px rgba(210, 219, 224, 0.589);
 }
 
