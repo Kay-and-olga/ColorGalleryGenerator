@@ -14,14 +14,22 @@ app.apiKey = '_3kOV9_qSimG_aJSFZFK_u2AIEsu5eyM4HAFOQ-OB-Y';
 app.apiKeyKay = 'kAOrK_X8Er74XeTEqGJae_ti3NK45tPvRRpxrT-2U7M';
 
 
-// variables to hold code blocks to display and allow the user to copy ~OLGA
-app.gridCodeHTML;
-app.gridCodeCSS;
 
 // store images parameters (color, amount and orientation) with default values on page load
 app.imageColor = 'purple';
 app.imageOrientation = 'squarish';
 app.imageAmount = 10;
+
+// stores values for amount of columns and gap size of the gallery chosen by the user
+app.columnAmount = 3;
+app.gapSize = 5;
+
+
+//? variables to hold code blocks to display and allow the user to copy
+app.gridCodeHtml;
+app.gridCodeCss;
+app.imgHtmlArr = [];
+//?
 
 
 // FUNCTIONS THAT DEAL WITH LOADING IMAGES
@@ -91,10 +99,10 @@ app.displayImages = function(array){
 
         // the html to append
         const htmlToAppend = `
-            <img class="galleryImg" src='${imageUrl} alt='${altText}'>
-        `;
+            <img class="galleryImg" src='${imageUrl} alt='${altText}'>`;
         // append the html to the page
         $('.galleryGrid').append(htmlToAppend);
+        app.imgHtmlArr.push(htmlToAppend);
     })
 }
 
@@ -121,6 +129,31 @@ app.getImages = function(){
 
 
 
+// FUNCTIONS THAT DEAL WITH DISPLAYING CODE
+app.getCssCode = function() {
+
+    const cssCode = 
+    `<p>.galleryGrid {</p>
+        <p>display: grid;</p>
+        <p>grid-template-columns: repeat(${app.columnAmount}, 1fr);</p>
+        <p>grid-gap: ${app.gapSize}px;</p>
+    <p>}</p>
+
+    <p>.galleryImg {</p>
+    <p>object-fit: cover;</p>
+    <p>width: 100%;</p>
+    <p>height: 100%;</p>
+<p>}</p>`;
+    $('#cssBlock').html(cssCode);
+}
+
+
+// END OF FUNCTIONS THAT DEAL WITH DISPLAYING CODE
+
+
+
+
+
 // FUNCTIONS THAT DEAL WITH STYLING THE GRID
 
 // changes amount of columns in the gallery grid
@@ -129,9 +162,13 @@ app.changeColumns = function() {
     $('#columns').on('change', function() {
 
         // stores the amount of columns chosen by the user
-        const columnAmount = parseInt($(this).val());
+        app.columnAmount = parseInt($(this).val());
+        
         // updates the gallery container's styles
-        $('.galleryGrid').css('grid-template-columns', `repeat(${columnAmount}, 1fr`);
+        $('.galleryGrid').css('grid-template-columns', `repeat(${app.columnAmount}, 1fr`);
+
+        // updates the displayed code
+        app.getCssCode()
     })
 }
 
@@ -141,22 +178,39 @@ app.changeGap = function() {
     $('#gap').on('change', function() {
 
         // stores the amount of columns chosen by the user
-        const gapAmount = parseInt($(this).val());
+        app.gapSize = parseInt($(this).val());
+        console.log(app.gapSize);
         // updates the gallery container's styles
-        $('.galleryGrid').css('grid-gap', `${gapAmount}px`);
+        $('.galleryGrid').css('grid-gap', `${app.gapSize}px`);
+
+        // updates the displayed code
+        app.getCssCode();
     })
 }
 // END OF FUNCTIONS THAT DEAL WITH STYLING THE GRID
 
 
-// FUNCTIONS THAT DEAL WITH DISPLAYING CODE
-app.getCode = function() {
-    // app.gridCodeHTML = $('.galleryGrid').html();
-    // console.log(app.gridCodeHTML);
 
-    app.gridCodeCSS = $('.galleryGrid').css();
-    console.log(app.gridCodeCSS);
+app.getHtmlCode = function() {
+    // const imgArr = app.imgHtmlArr;
+    // console.log(imgArr);
+
+    // app.gridCodeHtml = `<div class = "galleryGrid">`;
+
+    // imgArr.forEach(function(item) {
+    //     //! FOR SOME REASON THIS RETURNS UNDEFINED
+    //     console.log(item);
+    // })
+
+
+    // const gridHtml = $('.galleryGrid').html();
+    // $('.htmlBlock').text(gridHtml)
 }
+
+
+
+
+
 
 
 
@@ -182,7 +236,8 @@ app.init = function(){
     // change the size of grid gap
     app.changeGap();
 
-    // app.getCode();
+    // app.getHtmlCode();
+    app.getCssCode();
 }
 
 // document ready

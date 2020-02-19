@@ -305,8 +305,8 @@ main .wrapper {
   padding-bottom: 100px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 20% (1fr)[4];
-      grid-template-rows: 20% repeat(4, 1fr);
+  -ms-grid-rows: 20% (1fr)[2];
+      grid-template-rows: 20% repeat(2, 1fr);
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
@@ -428,8 +428,6 @@ main .wrapper {
 .galleryGrid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
@@ -472,6 +470,11 @@ main .wrapper {
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-area: code;
+}
+
+.code .codeblock {
+  background-color: #434960;
+  color: #EEF3F6;
 }
 
 footer {
