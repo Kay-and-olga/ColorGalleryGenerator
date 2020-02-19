@@ -89,6 +89,7 @@ app.chooseAmount = function () {
 
 // make function to display the images in grid
 app.displayImages = function (array) {
+    
     let htmlCode = '<div class="galleryGrid"> \n';
     // for each item in array, display the images
     array.forEach(function (currentItem) {
@@ -142,16 +143,16 @@ app.getCssCode = function () {
 
     const cssCode =
     `<pre>
-<span class="selector">.galleryGrid</span> {
-    <span class="property">display:</span> grid;
-    <span class="property">grid-template-columns:</span> repeat(${app.columnAmount}, 1fr);
-    <span class="property">grid-gap:</span> ${app.gapSize}px;
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(${app.columnAmount}, 1fr);
+    grid-gap: ${app.gapSize}px;
 }
 
-<span class="selector">.galleryImg</span> {
-    <span class="property">object-fit:</span> cover;
-    <span class="property">width:</span> 100%;
-    <span class="property">height:</span> 100%;
+.galleryImg {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }</pre>`;
 
     $('#cssBlock').html(cssCode);
