@@ -89,7 +89,7 @@ app.chooseAmount = function () {
 
 // make function to display the images in grid
 app.displayImages = function (array) {
-
+    let htmlCode = '<div class="galleryGrid"> \n';
     // for each item in array, display the images
     array.forEach(function (currentItem) {
         // make variable for the image
@@ -98,12 +98,15 @@ app.displayImages = function (array) {
         const altText = currentItem.alt_description;
 
         // the html to append
-        const htmlToAppend = `
-            <img class="galleryImg" src='${imageUrl} alt='${altText}'>`;
+        const htmlToAppend = 
+        `\t <img class="galleryImg" src='${imageUrl} alt='${altText}'> \n`;
         // append the html to the page
         $('.galleryGrid').append(htmlToAppend);
-        app.imgHtmlArr.push(htmlToAppend);
+        
+        htmlCode += htmlToAppend;
     })
+    htmlCode += '</div>'
+    $('#htmlBlock pre').text(htmlCode);
 }
 
 
@@ -130,25 +133,12 @@ app.getImages = function () {
 
 
 // FUNCTIONS THAT DEAL WITH DISPLAYING CODE
-app.getHtmlCode = function () {
-    // const imgArr = app.imgHtmlArr;
-    // console.log(imgArr);
+app.getHtmlCode = function (src, alt) {
+    const htmlCode = ``
 
-    // app.gridCodeHtml = `<div class = "galleryGrid">`;
-
-    // imgArr.forEach(function(item) {
-    //! FOR SOME REASON THIS RETURNS UNDEFINED
-    //     console.log(item);
-    // })
-
-
-    // const gridHtml = $('.galleryGrid').html();
-    // $('.htmlBlock').text(gridHtml)
 }
 // generates formatted css code for the gallery and displays in on the page
 app.getCssCode = function () {
-
-    $('#cssBlock').empty();
 
     const cssCode =
     `<pre>
@@ -164,7 +154,7 @@ app.getCssCode = function () {
     <span class="property">height:</span> 100%;
 }</pre>`;
 
-    $('#cssBlock').append(cssCode);
+    $('#cssBlock').html(cssCode);
 }
 // END OF FUNCTIONS THAT DEAL WITH DISPLAYING CODE
 
@@ -226,7 +216,7 @@ app.init = function () {
     // change the size of grid gap
     app.changeGap();
 
-    // app.getHtmlCode();
+    app.getHtmlCode();
     app.getCssCode();
 }
 

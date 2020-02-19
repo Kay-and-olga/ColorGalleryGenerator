@@ -471,12 +471,17 @@ main .wrapper {
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-area: code;
+  overflow: hidden;
 }
 
 .code .codeBlock {
   background-color: #434960;
   color: #EEF3F6;
   padding: 15px;
+}
+
+.code #htmlBlock {
+  overflow: scroll;
 }
 
 .code .selector {

@@ -131,11 +131,17 @@ main .wrapper{
 // code section styles
 .code{
     grid-area: code;
+    overflow: hidden;
 
     .codeBlock {
         background-color: $fontColour;
         color: $primaryColour;
         padding: 15px;
+        
+    }
+
+    #htmlBlock {
+        overflow: scroll;
     }
 
     .selector {
