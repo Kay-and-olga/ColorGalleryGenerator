@@ -55,7 +55,8 @@ body{
 h1,
 h2,
 legend,
-label.imageNumber{
+label.imageNumber,
+h3 {
     font-family: $headingFont;
     text-transform: uppercase;
     font-weight: 400;

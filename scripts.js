@@ -1,10 +1,10 @@
 //* The ajax request takes in a query of color in a string format(e.g.‘red’), and returns an array of 10 image objects matching that match the query
 
-// The image urls are fed into src attribute of dynamically created img elements, which are appended to a grid container
+//* The image urls are fed into src attribute of dynamically created img elements, which are appended to a grid container
 
-// The user can use sliders to adjust the number of grid rows, columns and gap size.The styles of the grid container are changed with the.css() method.The sliders themselves are < input type =”range”> elements, which have.on(‘change’) event listener on them.
+//* The user can use sliders to adjust the number of grid rows, columns and gap size.The styles of the grid container are changed with the.css() method.The sliders themselves are < input type =”range”> elements, which have.on(‘change’) event listener on them.
 
-// The HTML and CSS of the grid container are retrieved with .html() and.css() methods, these values are stored in variables, which are then appended to containers displaying code.The user can copy the code with ctrl + c(Stretch goal: add a button that will copy the whole code block to clipboard on click)
+//* The HTML and CSS of the grid container are retrieved with .html() and.css() methods, these values are stored in variables, which are then appended to containers displaying code.The user can copy the code with ctrl + c(Stretch goal: add a button that will copy the whole code block to clipboard on click)
 
 // namespace object
 const app = {};
@@ -14,21 +14,29 @@ app.apiKey = '_3kOV9_qSimG_aJSFZFK_u2AIEsu5eyM4HAFOQ-OB-Y';
 app.apiKeyKay = 'kAOrK_X8Er74XeTEqGJae_ti3NK45tPvRRpxrT-2U7M';
 
 
-// variables to hold code blocks to display and allow the user to copy ~OLGA
-app.gridCodeHTML;
-app.gridCodeCSS;
 
 // store images parameters (color, amount and orientation) with default values on page load
 app.imageColor = 'purple';
 app.imageOrientation = 'squarish';
 app.imageAmount = 10;
 
+// stores values for amount of columns and gap size of the gallery chosen by the user
+app.columnAmount = 3;
+app.gapSize = 5;
+
+
+//? variables to hold code blocks to display and allow the user to copy
+app.gridCodeHtml;
+app.imgHtmlArr = [];
+//?
+
 
 // FUNCTIONS THAT DEAL WITH LOADING IMAGES
-// when user selects a colour, grab images of that color from the API
-app.chooseColor = function(){
 
-    $("input[name='color']").on('change', function(){
+// when user selects a colour, grab images of that color from the API
+app.chooseColor = function () {
+
+    $("input[name='color']").on('change', function () {
 
         // clear the grid container before getting images
         $('.galleryGrid').empty();
@@ -43,9 +51,9 @@ app.chooseColor = function(){
 
 
 // when user selects an image orientation, grab images with that orientation 
-app.chooseOrientation = function(){
+app.chooseOrientation = function () {
 
-    $("input[name='orientation']").on('change', function() {
+    $("input[name='orientation']").on('change', function () {
 
         // empty the grid container
         $('.galleryGrid').empty();
@@ -61,9 +69,9 @@ app.chooseOrientation = function(){
 
 
 // user can select how many images they want to load (5-20 is an acceptable value)
-app.chooseAmount = function() {
+app.chooseAmount = function () {
 
-    $('#imageNumber').on('change', function() {
+    $('#imageNumber').on('change', function () {
 
         // empty the grid container
         $('.galleryGrid').empty();
@@ -80,27 +88,31 @@ app.chooseAmount = function() {
 
 
 // make function to display the images in grid
-app.displayImages = function(array){
-
+app.displayImages = function (array) {
+    
+    let htmlCode = '<div class="galleryGrid"> \n';
     // for each item in array, display the images
-    array.forEach(function(currentItem){
+    array.forEach(function (currentItem) {
         // make variable for the image
         const imageUrl = currentItem.urls.regular;
         // make variable for the alt
         const altText = currentItem.alt_description;
 
         // the html to append
-        const htmlToAppend = `
-            <img class="galleryImg" src='${imageUrl} alt='${altText}'>
-        `;
+        const htmlToAppend = 
+        `\t <img class="galleryImg" src='${imageUrl} alt='${altText}'> \n`;
         // append the html to the page
         $('.galleryGrid').append(htmlToAppend);
+        
+        htmlCode += htmlToAppend;
     })
+    htmlCode += '</div>'
+    $('#htmlBlock pre').text(htmlCode);
 }
 
 
 // make function to get images from api
-app.getImages = function(){
+app.getImages = function () {
 
     $.ajax({
         url: 'https://api.unsplash.com/photos/random',
@@ -112,7 +124,7 @@ app.getImages = function(){
             count: `${app.imageAmount}`,
             orientation: `${app.imageOrientation}`,
         },
-    }).then(function(images){
+    }).then(function (images) {
         // call function to display images
         app.displayImages(images);
     })
@@ -121,35 +133,73 @@ app.getImages = function(){
 
 
 
+// FUNCTIONS THAT DEAL WITH DISPLAYING CODE
+app.getHtmlCode = function (src, alt) {
+    const htmlCode = ``
+
+}
+// generates formatted css code for the gallery and displays in on the page
+app.getCssCode = function () {
+
+    const cssCode =
+    `<pre>
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(${app.columnAmount}, 1fr);
+    grid-gap: ${app.gapSize}px;
+}
+
+.galleryImg {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}</pre>`;
+
+    $('#cssBlock').html(cssCode);
+}
+// END OF FUNCTIONS THAT DEAL WITH DISPLAYING CODE
+
+
+
 // FUNCTIONS THAT DEAL WITH STYLING THE GRID
 
 // changes amount of columns in the gallery grid
 // Acceptable values: 2-5;
-app.changeColumns = function() {
-    $('#columns').on('change', function() {
+app.changeColumns = function () {
+    $('#columns').on('change', function () {
 
         // stores the amount of columns chosen by the user
-        const columnAmount = parseInt($(this).val());
-        // updates the gallery container's styles
-        $('.galleryGrid').css('grid-template-columns', `repeat(${columnAmount}, 1fr`);
+        app.columnAmount = parseInt($(this).val());
 
+        // updates the gallery container's styles
+        // $('.galleryGrid').css('grid-template-columns', `repeat(${columnAmount}, 1fr`);
+
+        
+        $('.galleryGrid').css('grid-template-columns', `repeat(${app.columnAmount}, 1fr`);
         // call the show slider input function
         app.showSliderInput();
+        // updates the displayed code
+        app.getCssCode()
+        
     })
 }
 
 // changes the size of grid gap in the gallery grid. 
 // Acceptable values: 5 - 40px
-app.changeGap = function() {
-    $('#gap').on('change', function() {
+app.changeGap = function () {
+    $('#gap').on('change', function () {
 
         // stores the amount of columns chosen by the user
-        const gapAmount = parseInt($(this).val());
+        app.gapSize = parseInt($(this).val());
+        console.log(app.gapSize);
         // updates the gallery container's styles
-        $('.galleryGrid').css('grid-gap', `${gapAmount}px`);
+        $('.galleryGrid').css('grid-gap', `${app.gapSize}px`);
 
         // call the show slider input function
         app.showSliderInput();
+        
+        // updates the displayed code
+        app.getCssCode();
     })
 }
 // END OF FUNCTIONS THAT DEAL WITH STYLING THE GRID
@@ -165,10 +215,12 @@ app.showSliderInput = function(){
     $('#gapAmount').text(`${gapValue}`);
 }
 
-// initializing function
-app.init = function(){
 
-    // show the value of the sliderinputs
+
+
+// initializing function
+app.init = function () {
+    // show the value of the slider inputs
     app.showSliderInput();
     // loads images into the grid on page load
     app.getImages();
@@ -184,11 +236,12 @@ app.init = function(){
     // change the size of grid gap
     app.changeGap();
 
-    // app.getCode();
+    app.getHtmlCode();
+    app.getCssCode();
 }
 
 // document ready
-$(function(){
+$(function () {
     // call initializing function
     app.init();
 })

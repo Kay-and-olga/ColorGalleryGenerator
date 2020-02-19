@@ -283,7 +283,8 @@ body {
 h1,
 h2,
 legend,
-label.imageNumber {
+label.imageNumber,
+h3 {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
@@ -310,18 +311,21 @@ main .wrapper {
   padding-bottom: 100px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 20% (1fr)[2];
-      grid-template-rows: 20% repeat(2, 1fr);
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  /* -ms-grid-rows: 20% (1fr)[2]; */
+  grid-template-rows: 20% repeat(2, 1fr);
+  /* -ms-grid-columns: (1fr)[4]; */
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-      grid-template-areas: ". picker picker ." "gallery gallery gallery sliders" "gallery gallery gallery code";
+  grid-template-areas: 
+    ". picker picker ."
+    "gallery gallery gallery sliders"
+    "gallery gallery gallery code";
 }
 
 .colorPicker {
-  -ms-grid-row: 1;
+  /* -ms-grid-row: 1;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 2; */
   grid-area: picker;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -424,9 +428,9 @@ main .wrapper {
 }
 
 .gallery {
-  -ms-grid-row: 2;
+  /* -ms-grid-row: 2;
   -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
+  -ms-grid-column: 1; */
   -ms-grid-column-span: 3;
   grid-area: gallery;
 }
@@ -434,9 +438,7 @@ main .wrapper {
 .galleryGrid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
-  -ms-grid-columns: (1fr)[3];
+  /* -ms-grid-columns: (1fr)[3]; */
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
 }
@@ -449,8 +451,8 @@ main .wrapper {
 }
 
 .sliders {
-  -ms-grid-row: 2;
-  -ms-grid-column: 4;
+  /* -ms-grid-row: 2;
+  -ms-grid-column: 4; */
   grid-area: sliders;
 }
 
@@ -609,9 +611,28 @@ input[type='number']:hover, input[type='number']:focus {
 }
 
 .code {
-  -ms-grid-row: 3;
-  -ms-grid-column: 4;
+  /* -ms-grid-row: 3;
+  -ms-grid-column: 4; */
   grid-area: code;
+  overflow: hidden;
+}
+
+.code .codeBlock {
+  background-color: #434960;
+  color: #EEF3F6;
+  padding: 15px;
+}
+
+.code #htmlBlock {
+  overflow-x: scroll;
+}
+
+.code .selector {
+  color: #87d687;
+}
+
+.code .property {
+  color: #d9c0f1;
 }
 
 footer {
