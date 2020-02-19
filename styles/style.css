@@ -472,13 +472,14 @@ main .wrapper {
   border: none;
 }
 
-.sliders label,
-.sliders p {
-  font-size: 1.6rem;
+.sliders label {
+  font-size: 1.8rem;
+  text-transform: lowercase;
+  margin-bottom: 10px;
 }
 
-.sliders .columnSlideContainer,
-.sliders .gapSlideContainer {
+.columnSlideContainer,
+.gapSlideContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -488,22 +489,55 @@ main .wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 10px;
 }
 
-.sliders .columnSlideContainer label,
-.sliders .gapSlideContainer label {
-  text-transform: uppercase;
-  margin-right: 10px;
+.columnSlideContainer p,
+.gapSlideContainer p {
+  background-color: white;
+  display: inline-block;
+  padding: 3px 15px;
+  border-radius: 20px;
+  font-size: 1.2rem;
 }
 
-.sliders legend {
-  text-align: center;
+.columnSlideContainer input,
+.gapSlideContainer input {
+  -webkit-appearance: none;
+  width: 75%;
+  background-color: transparent;
+}
+
+.columnSlideContainer input::-moz-range-track, .columnSlideContainer input::-webkit-slider-runnable-track,
+.gapSlideContainer input::-moz-range-track,
+.gapSlideContainer input::-webkit-slider-runnable-track {
+  height: 2px;
+  border-radius: 1.5px;
+  background-color: #434960;
+}
+
+.columnSlideContainer input::-moz-range-thumb, .columnSlideContainer input::-webkit-slider-thumb,
+.gapSlideContainer input::-moz-range-thumb,
+.gapSlideContainer input::-webkit-slider-thumb {
+  cursor: pointer;
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background-color: #EEF3F6;
+  border: 2px solid #434960;
+}
+
+.columnSlideContainer input:hover::-moz-range-thumb,
+.columnSlideContainer input:focus::-moz-range-thumb,
+.columnSlideContainer input:hover::-webkit-slider-thumb,
+.columnSlideContainer input:focus::-webkit-slider-thumb {
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1), 0 0 0 5px rgba(210, 219, 224, 0.589);
 }
 
 .code {

@@ -119,7 +119,7 @@ main .wrapper{
 }
 
 
-// sliders styles
+// overall sliders styles
 .sliders{
     grid-area: sliders;
 
@@ -129,31 +129,79 @@ main .wrapper{
         @include flex(column, center, center);
     }
 
+    // remove the fieldset border
     fieldset{
         border: none;
     }
 
-    label,
-    p{
-        font-size: 1.6rem;
-        
+    // change size of the labels
+    label{
+        font-size: 1.8rem;
+        text-transform: lowercase;
+        margin-bottom: 10px;
     }
 
-    .columnSlideContainer,
-    .gapSlideContainer{
-        @include flex(row, flex-end, center);
-    }
-
-    .columnSlideContainer label,
-    .gapSlideContainer label{
-        text-transform: uppercase;
-        margin-right: 10px;
-    }
-
-    legend{
-        text-align: center;
-    }
 }
+
+// flex the items in the containers
+.columnSlideContainer,
+.gapSlideContainer{
+    @include flex(row, space-between, center);
+    margin-bottom: 10px;
+}
+
+
+// style the ps with the number
+.columnSlideContainer p,
+.gapSlideContainer p{
+    background-color: white;
+    display: inline-block;
+    padding: 3px 15px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+}
+
+// change the width of the input range
+// styles and removing default followed guide from: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+.columnSlideContainer input,
+.gapSlideContainer input{
+    // removes styling so can make custom
+    -webkit-appearance: none;
+    // specific width needed for FF
+    width: 75%;
+    // would be white in chrome
+    background-color: transparent;
+
+    // styles for the track
+    &::-moz-range-track,
+    &::-webkit-slider-runnable-track{
+        height: 2px;
+        border-radius: 1.5px;
+        background-color: $fontColour;
+    }
+
+    // styles for the thumb
+    &::-moz-range-thumb,
+    &::-webkit-slider-thumb{
+        cursor: pointer;
+        -webkit-appearance: none;
+        width: 12px;
+        height: 12px;
+        background-color: $primaryColour;
+        border: 2px solid $fontColour;
+    }
+
+}
+
+// add focus states to the thumb
+.columnSlideContainer input:hover::-moz-range-thumb,
+.columnSlideContainer input:focus::-moz-range-thumb,
+.columnSlideContainer input:hover::-webkit-slider-thumb,
+.columnSlideContainer input:focus::-webkit-slider-thumb{
+    box-shadow: inset 0 1px 5px rgba(0,0,0, .1), 0 0 0 5px rgba(210, 219, 224, 0.589);
+}
+
+
 
 // code section styles
 .code{
