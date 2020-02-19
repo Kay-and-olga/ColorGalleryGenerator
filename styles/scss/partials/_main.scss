@@ -94,7 +94,8 @@ main .wrapper{
     
     // add focus and hover events on the label
     input[type='radio']:hover + label,
-    input[type='radio']:focus + label{
+    input[type='radio']:focus + label,
+    input[type='radio']:checked + label{
         cursor: pointer;
         // found on: https://www.creativejuiz.fr/blog/en/tutorials/customize-checkbox-and-radio-button-with-css
         box-shadow: inset 0 1px 5px rgba(0,0,0, .1), 0 0 0 5px rgb(210, 219, 224);
@@ -132,10 +133,45 @@ main .wrapper{
         @include flex(column, center, center);
     }
 
-    // remove the fieldset border and the spacing
     fieldset{
+        // remove the fieldset border
         border: none;
-        padding: 0;
+        padding-bottom: 10px;
+        @include flex(column, center, center);
+
+        legend{
+            padding: 20px 0 10px;
+        }
+    
+        // accesible hiding of radio button
+        input[type='radio']{
+            opacity: 0;
+            position: fixed;
+            width: 0;
+        }
+        
+        // style the labels
+        label{
+            padding: 10px 30px;
+            text-align: center;
+            border-radius: 11px;
+            width: 160px;
+            background-color: #fff;
+            border: 2px solid white;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.034);
+            transition: $transition;
+        }
+
+        // style the checked, focus and hover states of orientation
+        input[type='radio']:checked + label,
+        input[type='radio']:hover + label,
+        input[type='radio']:focus + label{
+            border: 2px solid $fontColour;
+            cursor: pointer;
+        }
+
+
+
 
     }
 
@@ -204,6 +240,8 @@ input[type='range']:hover::-webkit-slider-thumb,
 input[type='range']:focus::-webkit-slider-thumb{
     box-shadow: inset 0 1px 5px rgba(0,0,0, .1), 0 0 0 5px rgba(210, 219, 224, 0.589);
 }
+
+
 
 
 
