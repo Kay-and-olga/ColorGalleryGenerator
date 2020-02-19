@@ -132,9 +132,18 @@ main .wrapper{
 .code{
     grid-area: code;
 
-    .codeblock {
+    .codeBlock {
         background-color: $fontColour;
         color: $primaryColour;
+        padding: 15px;
+    }
+
+    .selector {
+        color: rgb(135, 214, 135);
+    }
+
+    .property {
+        color:  rgb(217, 192, 241);
     }
 }
 

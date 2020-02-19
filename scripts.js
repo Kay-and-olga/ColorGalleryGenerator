@@ -27,16 +27,16 @@ app.gapSize = 5;
 
 //? variables to hold code blocks to display and allow the user to copy
 app.gridCodeHtml;
-app.gridCodeCss;
 app.imgHtmlArr = [];
 //?
 
 
 // FUNCTIONS THAT DEAL WITH LOADING IMAGES
-// when user selects a colour, grab images of that color from the API
-app.chooseColor = function(){
 
-    $("input[name='color']").on('change', function(){
+// when user selects a colour, grab images of that color from the API
+app.chooseColor = function () {
+
+    $("input[name='color']").on('change', function () {
 
         // clear the grid container before getting images
         $('.galleryGrid').empty();
@@ -51,9 +51,9 @@ app.chooseColor = function(){
 
 
 // when user selects an image orientation, grab images with that orientation 
-app.chooseOrientation = function(){
+app.chooseOrientation = function () {
 
-    $("input[name='orientation']").on('change', function() {
+    $("input[name='orientation']").on('change', function () {
 
         // empty the grid container
         $('.galleryGrid').empty();
@@ -69,9 +69,9 @@ app.chooseOrientation = function(){
 
 
 // user can select how many images they want to load (5-20 is an acceptable value)
-app.chooseAmount = function() {
+app.chooseAmount = function () {
 
-    $('#imageNumber').on('change', function() {
+    $('#imageNumber').on('change', function () {
 
         // empty the grid container
         $('.galleryGrid').empty();
@@ -88,10 +88,10 @@ app.chooseAmount = function() {
 
 
 // make function to display the images in grid
-app.displayImages = function(array){
+app.displayImages = function (array) {
 
     // for each item in array, display the images
-    array.forEach(function(currentItem){
+    array.forEach(function (currentItem) {
         // make variable for the image
         const imageUrl = currentItem.urls.regular;
         // make variable for the alt
@@ -108,7 +108,7 @@ app.displayImages = function(array){
 
 
 // make function to get images from api
-app.getImages = function(){
+app.getImages = function () {
 
     $.ajax({
         url: 'https://api.unsplash.com/photos/random',
@@ -120,7 +120,7 @@ app.getImages = function(){
             count: `${app.imageAmount}`,
             orientation: `${app.imageOrientation}`,
         },
-    }).then(function(images){
+    }).then(function (images) {
         // call function to display images
         app.displayImages(images);
     })
@@ -130,27 +130,43 @@ app.getImages = function(){
 
 
 // FUNCTIONS THAT DEAL WITH DISPLAYING CODE
-app.getCssCode = function() {
+app.getHtmlCode = function () {
+    // const imgArr = app.imgHtmlArr;
+    // console.log(imgArr);
 
-    const cssCode = 
-    `<p>.galleryGrid {</p>
-        <p>display: grid;</p>
-        <p>grid-template-columns: repeat(${app.columnAmount}, 1fr);</p>
-        <p>grid-gap: ${app.gapSize}px;</p>
-    <p>}</p>
+    // app.gridCodeHtml = `<div class = "galleryGrid">`;
 
-    <p>.galleryImg {</p>
-    <p>object-fit: cover;</p>
-    <p>width: 100%;</p>
-    <p>height: 100%;</p>
-<p>}</p>`;
-    $('#cssBlock').html(cssCode);
+    // imgArr.forEach(function(item) {
+    //! FOR SOME REASON THIS RETURNS UNDEFINED
+    //     console.log(item);
+    // })
+
+
+    // const gridHtml = $('.galleryGrid').html();
+    // $('.htmlBlock').text(gridHtml)
+}
+// generates formatted css code for the gallery and displays in on the page
+app.getCssCode = function () {
+
+    $('#cssBlock').empty();
+
+    const cssCode =
+    `<pre>
+<span class="selector">.galleryGrid</span> {
+    <span class="property">display:</span> grid;
+    <span class="property">grid-template-columns:</span> repeat(${app.columnAmount}, 1fr);
+    <span class="property">grid-gap:</span> ${app.gapSize}px;
 }
 
+<span class="selector">.galleryImg</span> {
+    <span class="property">object-fit:</span> cover;
+    <span class="property">width:</span> 100%;
+    <span class="property">height:</span> 100%;
+}</pre>`;
 
+    $('#cssBlock').append(cssCode);
+}
 // END OF FUNCTIONS THAT DEAL WITH DISPLAYING CODE
-
-
 
 
 
@@ -158,12 +174,12 @@ app.getCssCode = function() {
 
 // changes amount of columns in the gallery grid
 // Acceptable values: 2-5;
-app.changeColumns = function() {
-    $('#columns').on('change', function() {
+app.changeColumns = function () {
+    $('#columns').on('change', function () {
 
         // stores the amount of columns chosen by the user
         app.columnAmount = parseInt($(this).val());
-        
+
         // updates the gallery container's styles
         $('.galleryGrid').css('grid-template-columns', `repeat(${app.columnAmount}, 1fr`);
 
@@ -174,8 +190,8 @@ app.changeColumns = function() {
 
 // changes the size of grid gap in the gallery grid. 
 // Acceptable values: 5 - 40px
-app.changeGap = function() {
-    $('#gap').on('change', function() {
+app.changeGap = function () {
+    $('#gap').on('change', function () {
 
         // stores the amount of columns chosen by the user
         app.gapSize = parseInt($(this).val());
@@ -191,37 +207,11 @@ app.changeGap = function() {
 
 
 
-app.getHtmlCode = function() {
-    // const imgArr = app.imgHtmlArr;
-    // console.log(imgArr);
-
-    // app.gridCodeHtml = `<div class = "galleryGrid">`;
-
-    // imgArr.forEach(function(item) {
-    //     //! FOR SOME REASON THIS RETURNS UNDEFINED
-    //     console.log(item);
-    // })
-
-
-    // const gridHtml = $('.galleryGrid').html();
-    // $('.htmlBlock').text(gridHtml)
-}
-
-
-
-
-
-
-
-
-// END OF FUNCTIONS THAT DEAL WITH DISPLAYING CODE
-
-
 
 
 
 // initializing function
-app.init = function(){
+app.init = function () {
     // loads images into the grid on page load
     app.getImages();
     // call function for when the user selects a colour
@@ -241,7 +231,7 @@ app.init = function(){
 }
 
 // document ready
-$(function(){
+$(function () {
     // call initializing function
     app.init();
 })

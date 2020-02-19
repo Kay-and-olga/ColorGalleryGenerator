@@ -281,7 +281,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
@@ -472,9 +473,18 @@ main .wrapper {
   grid-area: code;
 }
 
-.code .codeblock {
+.code .codeBlock {
   background-color: #434960;
   color: #EEF3F6;
+  padding: 15px;
+}
+
+.code .selector {
+  color: #87d687;
+}
+
+.code .property {
+  color: #d9c0f1;
 }
 
 footer {
