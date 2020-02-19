@@ -1,10 +1,10 @@
 //* The ajax request takes in a query of color in a string format(e.g.‘red’), and returns an array of 10 image objects matching that match the query
 
-// The image urls are fed into src attribute of dynamically created img elements, which are appended to a grid container
+//* The image urls are fed into src attribute of dynamically created img elements, which are appended to a grid container
 
-// The user can use sliders to adjust the number of grid rows, columns and gap size.The styles of the grid container are changed with the.css() method.The sliders themselves are < input type =”range”> elements, which have.on(‘change’) event listener on them.
+//* The user can use sliders to adjust the number of grid rows, columns and gap size.The styles of the grid container are changed with the.css() method.The sliders themselves are < input type =”range”> elements, which have.on(‘change’) event listener on them.
 
-// The HTML and CSS of the grid container are retrieved with .html() and.css() methods, these values are stored in variables, which are then appended to containers displaying code.The user can copy the code with ctrl + c(Stretch goal: add a button that will copy the whole code block to clipboard on click)
+//* The HTML and CSS of the grid container are retrieved with .html() and.css() methods, these values are stored in variables, which are then appended to containers displaying code.The user can copy the code with ctrl + c(Stretch goal: add a button that will copy the whole code block to clipboard on click)
 
 // namespace object
 const app = {};
