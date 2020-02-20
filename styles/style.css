@@ -494,6 +494,10 @@ main .wrapper {
           align-items: center;
 }
 
+.sliders span {
+  color: #9296a7;
+}
+
 .sliders fieldset {
   border: none;
   padding-bottom: 10px;

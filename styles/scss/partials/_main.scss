@@ -135,6 +135,11 @@ main .wrapper{
         @include flex(column, center, center);
     }
 
+    // style the span ('in px')
+    span{
+        color: #9296a7;
+    }
+
     fieldset{
         // remove the fieldset border
         border: none;
