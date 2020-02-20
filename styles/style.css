@@ -235,6 +235,18 @@ html {
   overflow: hidden;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #434960;
+  font-size: 2rem;
+  position: relative;
+  line-height: 1.5;
+}
+
 *,
 h1 {
   padding: 0;
@@ -245,10 +257,6 @@ img {
   display: block;
   width: 100%;
   height: auto;
-}
-
-html {
-  font-size: 62.5%;
 }
 
 ul {
@@ -266,20 +274,6 @@ button {
   cursor: pointer;
 }
 
-.wrapper {
-  max-width: 2000px;
-  width: 90%;
-  margin: 0 auto;
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  color: #434960;
-  font-size: 2rem;
-  position: relative;
-  line-height: 1.5;
-}
-
 h1,
 h2,
 legend,
@@ -288,6 +282,16 @@ h3 {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
+}
+
+.wrapper {
+  max-width: 2000px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.openOnHover {
+  left: 0;
 }
 
 header {
@@ -311,21 +315,18 @@ main .wrapper {
   padding-bottom: 100px;
   display: -ms-grid;
   display: grid;
-  /* -ms-grid-rows: 20% (1fr)[2]; */
-  grid-template-rows: 20% repeat(2, 1fr);
-  /* -ms-grid-columns: (1fr)[4]; */
-  grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 20% (1fr)[2];
+      grid-template-rows: 20% repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-  grid-template-areas: 
-    ". picker picker ."
-    "gallery gallery gallery sliders"
-    "gallery gallery gallery code";
+      grid-template-areas: ". picker picker ." "gallery gallery gallery sliders" "gallery gallery gallery code";
 }
 
 .colorPicker {
-  /* -ms-grid-row: 1;
+  -ms-grid-row: 1;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 2; */
+  -ms-grid-column-span: 2;
   grid-area: picker;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -428,9 +429,9 @@ main .wrapper {
 }
 
 .gallery {
-  /* -ms-grid-row: 2;
+  -ms-grid-row: 2;
   -ms-grid-row-span: 2;
-  -ms-grid-column: 1; */
+  -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: gallery;
 }
@@ -438,7 +439,7 @@ main .wrapper {
 .galleryGrid {
   display: -ms-grid;
   display: grid;
-  /* -ms-grid-columns: (1fr)[3]; */
+  -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
 }
@@ -451,8 +452,8 @@ main .wrapper {
 }
 
 .sliders {
-  /* -ms-grid-row: 2;
-  -ms-grid-column: 4; */
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
   grid-area: sliders;
 }
 
@@ -611,8 +612,8 @@ input[type='number']:hover, input[type='number']:focus {
 }
 
 .code {
-  /* -ms-grid-row: 3;
-  -ms-grid-column: 4; */
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
   grid-area: code;
   overflow: hidden;
 }
@@ -627,21 +628,96 @@ input[type='number']:hover, input[type='number']:focus {
   overflow-x: scroll;
 }
 
-.code .selector {
-  color: #87d687;
+.socialContainer {
+  position: fixed;
+  left: 0;
+  top: 5%;
 }
 
-.code .property {
-  color: #d9c0f1;
+.socialContainer .social {
+  color: #EEF3F6;
+  margin: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: default;
+          flex-direction: default;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: default;
+      -ms-flex-align: default;
+          align-items: default;
+}
+
+.socialContainer .social .name {
+  padding: 10px;
+  background-color: #434960;
+  min-width: 86px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: default;
+          flex-direction: default;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.socialContainer .social .name i {
+  font-size: 1.3rem;
+  position: relative;
+  top: 2px;
+  left: 10px;
+  margin-right: 15px;
+}
+
+.socialContainer .social ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  background-color: #434960;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.socialContainer .social a {
+  padding: 10px 15px;
+}
+
+.socialContainer .social a:hover, .socialContainer .social a:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 footer {
   background-color: #434960;
   color: #D2DBE0;
   padding: 20px 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
 }
 

@@ -89,10 +89,13 @@ app.chooseAmount = function () {
 
 // make function to display the images in grid
 app.displayImages = function (array) {
-    
+
+    // stores html code to display on the page for user to copy
     let htmlCode = '<div class="galleryGrid"> \n';
+
     // for each item in array, display the images
     array.forEach(function (currentItem) {
+
         // make variable for the image
         const imageUrl = currentItem.urls.regular;
         // make variable for the alt
@@ -101,12 +104,16 @@ app.displayImages = function (array) {
         // the html to append
         const htmlToAppend = 
         `\t <img class="galleryImg" src='${imageUrl} alt='${altText}'> \n`;
+
         // append the html to the page
         $('.galleryGrid').append(htmlToAppend);
         
+        // add code to the page for the user to copy
         htmlCode += htmlToAppend;
     })
-    htmlCode += '</div>'
+
+    htmlCode += '</div>';
+    // appends the generated code block to the page
     $('#htmlBlock pre').text(htmlCode);
 }
 
@@ -134,16 +141,12 @@ app.getImages = function () {
 
 
 // FUNCTIONS THAT DEAL WITH DISPLAYING CODE
-app.getHtmlCode = function (src, alt) {
-    const htmlCode = ``
 
-}
 // generates formatted css code for the gallery and displays in on the page
 app.getCssCode = function () {
 
     const cssCode =
-    `<pre>
-.galleryGrid {
+    `.galleryGrid {
     display: grid;
     grid-template-columns: repeat(${app.columnAmount}, 1fr);
     grid-gap: ${app.gapSize}px;
@@ -153,9 +156,9 @@ app.getCssCode = function () {
     object-fit: cover;
     width: 100%;
     height: 100%;
-}</pre>`;
+}`;
 
-    $('#cssBlock').html(cssCode);
+    $('#cssBlock pre').html(cssCode);
 }
 // END OF FUNCTIONS THAT DEAL WITH DISPLAYING CODE
 
@@ -202,7 +205,7 @@ app.changeGap = function () {
         app.getCssCode();
     })
 }
-// END OF FUNCTIONS THAT DEAL WITH STYLING THE GRID
+
 
 // function that displays the value of the slider inputs
 app.showSliderInput = function(){
@@ -216,10 +219,27 @@ app.showSliderInput = function(){
 }
 
 
+// END OF FUNCTIONS THAT DEAL WITH STYLING THE GRID
+
+
+
+
+// MISC FUNCTIONS
+app.openSocialOnHover = function() {
+
+    $('.social').on('click', function() {
+        console.log('click');
+        $('.social ul').addClass('openOnHover');
+    })
+
+}
+// END OF MISC FUNCTIONS
 
 
 // initializing function
 app.init = function () {
+    // shows social links on hover
+    app.openSocialOnHover();
     // show the value of the slider inputs
     app.showSliderInput();
     // loads images into the grid on page load
@@ -236,8 +256,11 @@ app.init = function () {
     // change the size of grid gap
     app.changeGap();
 
+    // grabs gallery code for the user to copy
     app.getHtmlCode();
     app.getCssCode();
+
+    
 }
 
 // document ready

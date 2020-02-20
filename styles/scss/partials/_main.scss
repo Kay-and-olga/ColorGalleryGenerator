@@ -85,7 +85,7 @@ main .wrapper{
         }
     }
     
-    // accesible hiding of radio button
+    // accessible hiding of radio button
     input[type='radio']{
         opacity: 0;
         position: fixed;
@@ -142,7 +142,7 @@ main .wrapper{
             padding: 20px 0 10px;
         }
     
-        // accesible hiding of radio button
+        // accessible hiding of radio button
         input[type='radio']{
             opacity: 0;
             position: fixed;
@@ -164,7 +164,7 @@ main .wrapper{
         // style the checked, focus and hover states of orientation
         input[type='radio']:checked + label,
         input[type='radio']:hover + label,
-        input[type='radio']:focus + label{
+        input[type='radio']:focus + label {
             border: 2px solid $fontColour;
             cursor: pointer;
         }
@@ -266,19 +266,58 @@ input[type='number']{
         background-color: $fontColour;
         color: $primaryColour;
         padding: 15px;
-        
     }
 
     #htmlBlock {
         overflow-x: scroll;
     }
+}
 
-    .selector {
-        color: rgb(135, 214, 135);
-    }
 
-    .property {
-        color:  rgb(217, 192, 241);
+// social 
+.socialContainer {
+    position: fixed;
+    left: 0;
+    top: 5%;
+
+    .social {
+        // background-color: $fontColour;
+        color: $primaryColour;
+        margin: 5px 0;
+         
+        @include flex(default, start, default);
+
+        .name {
+            padding: 10px;
+            background-color: $fontColour;
+            min-width: 86px;
+            @include flex(default, space-between, center);
+
+            i {
+                font-size: 1.3rem;
+                position: relative;
+                top: 2px;
+                left: 10px;
+                margin-right: 15px;
+            }
+
+        }
+
+        ul {
+            @include flex();
+            background-color: $fontColour;
+            position: relative;
+            // left: -100%;
+            transition: all 0.4s ease;
+        }
+
+        a {
+            padding: 10px 15px;
+
+            @include hover {
+                transform: scale(1.1);
+            }
+        }
     }
 }
 
