@@ -440,9 +440,9 @@ main .wrapper {
   width: 0;
 }
 
-.colorPicker input[type='radio']:hover + label,
-.colorPicker input[type='radio']:focus + label,
-.colorPicker input[type='radio']:checked + label {
+.colorPicker input[type="radio"]:checked + label,
+.colorPicker input[type="radio"]:hover + label,
+.colorPicker input[type="radio"]:focus + label {
   cursor: pointer;
   -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1), 0 0 0 5px #d2dbe0;
           box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1), 0 0 0 5px #d2dbe0;
@@ -541,9 +541,9 @@ main .wrapper {
   transition: all 0.5s ease;
 }
 
-.sliders fieldset input[type='radio']:checked + label,
-.sliders fieldset input[type='radio']:hover + label,
-.sliders fieldset input[type='radio']:focus + label {
+.sliders fieldset input[type="radio"]:checked + label,
+.sliders fieldset input[type="radio"]:hover + label,
+.sliders fieldset input[type="radio"]:focus + label {
   border: 2px solid #434960;
   cursor: pointer;
 }

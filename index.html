@@ -141,7 +141,7 @@
                     <div class="modalContainer">
                         <section class="code">
                             <!-- button to close the modal -->
-                            <button class="modalClose"><i class="fas fa-times"></i></button>
+                            <button aria-label="Click to close the window" title="Click to close the window" class="modalClose"><i aria-hidden='true' class="fas fa-times"></i></button>
             
                             <h2>Grab your code</h2>
                             <div class="codeContainer">
@@ -151,9 +151,10 @@
                                     <input type="text" name="" id="hiddenHtmlCode" class="hiddenHtmlCode">
                                     <input type="text" name="" id="hiddenCssCode" class="hiddenCssCode">
 
+                                    <!-- flex container to flex the title and button beside each other -->
                                     <div class="flexCopy">
                                         <h3>HTML</h3>
-                                        <button id="copyHTML"><i class="far fa-copy"></i></button>
+                                        <button aria-label="Click to copy the HTML code to clipboard" title="Click to copy the HTML code to clipboard" id="copyHTML"><i aria-hidden="true" class="far fa-copy"></i></button>
                                     </div>
                 
                                     <div id="htmlBlock"> 
@@ -166,10 +167,11 @@
                                 </div>
                 
                                 <div class="codeBlock">
-                
+                                    
+                                    <!-- flex container to flex the title and button beside each other -->
                                     <div class="flexCopy">
                                         <h3>CSS</h3>
-                                        <button id="copyCss"><i class="far fa-copy"></i></button>
+                                        <button aria-label="Click to copy the CSS code to clipboard" title="Click to copy the CSS code to clipboard" id="copyCss"><i aria-hidden="true" class="far fa-copy"></i></button>
                                     </div>
                                     
                 
