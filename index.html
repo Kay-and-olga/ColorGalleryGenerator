@@ -79,60 +79,62 @@
             </section>
             <!--END OF COLOR PICKER -->
 
-
-            <!-- GALLERY -->
-            <section class="gallery">
-
-                <h2>Your gallery</h2>
-
-                <div class="galleryGrid">
-                    <!-- dynamically populated with images -->
-                </div>
-
-            </section>
-            <!-- END OF GALLERY -->
-
-
-            <!-- SLIDERS -->
-            <section class="sliders">
-
-                <h2>Adjust your grid</h2>
-
-                <form action="POST">
-
-                    <label class='columns' for="columns">Columns</label>
-                    <div class="columnSlideContainer">
-                        <input id="columns" type="range" name="gridSlider" min="2" max="5" value="3">
-                        <p id="columnAmount"></p>
+            <!-- FLEX CONTAINER  -->
+            <div class="flexContainer">
+                <!-- GALLERY -->
+                <section class="gallery">
+    
+                    <h2>Your gallery</h2>
+    
+                    <div class="galleryGrid">
+                        <!-- dynamically populated with images -->
                     </div>
-
-                    <label class='gap' for="gap">Gap</label>
-                    <div class="gapSlideContainer">
-                        <input id="gap" type="range" name="gridSlider" min='5' max='40' step="5" value="5">
-                        <p id="gapAmount"></p>
-                    </div>
-
-                    <fieldset>
-                        <legend>Choose orientation</legend>
-
-                        <input type="radio" name="orientation" id="square" value="squarish">
-                        <label class='square' for="square">Square</label>
-
-                        <input type="radio" name="orientation" id="landscape" value="landscape">
-                        <label class='landscape' for="landscape">Landscape</label>
-
-                        <input type="radio" name="orientation" id="portrait" value="portrait">
-                        <label class='portrait' for="portrait">Portrait</label>
-                    </fieldset>
-                    
-                    <label class='imageNumber' for="imageNumber">Amount of images</label>
-                    <input type="number" name="imageNumber" id="imageNumber" min="5" max="20">
-
-                </form>
-
-            </section>
-            <!-- END OF SLIDERS -->
-
+    
+                </section>
+                <!-- END OF GALLERY -->
+    
+    
+                <!-- SLIDERS -->
+                <section class="sliders">
+    
+                    <h2>Adjust your grid</h2>
+    
+                    <form action="POST">
+    
+                        <label class='columns' for="columns">Columns</label>
+                        <div class="columnSlideContainer">
+                            <input id="columns" type="range" name="gridSlider" min="2" max="5" value="3">
+                            <p id="columnAmount"></p>
+                        </div>
+    
+                        <label class='gap' for="gap">Gap</label>
+                        <div class="gapSlideContainer">
+                            <input id="gap" type="range" name="gridSlider" min='5' max='40' step="5" value="5">
+                            <p id="gapAmount"></p>
+                        </div>
+    
+                        <fieldset>
+                            <legend>Choose orientation</legend>
+    
+                            <input type="radio" name="orientation" id="square" value="squarish">
+                            <label class='square' for="square">Square</label>
+    
+                            <input type="radio" name="orientation" id="landscape" value="landscape">
+                            <label class='landscape' for="landscape">Landscape</label>
+    
+                            <input type="radio" name="orientation" id="portrait" value="portrait">
+                            <label class='portrait' for="portrait">Portrait</label>
+                        </fieldset>
+                        
+                        <label class='imageNumber' for="imageNumber">Amount of images</label>
+                        <input type="number" name="imageNumber" id="imageNumber" min="5" max="20">
+    
+                    </form>
+    
+                </section>
+                <!-- END OF SLIDERS -->
+            </div>
+            <!-- END OF FLEX CONTAINER  -->
 
             <!-- CODE -->
             <section class="code">
@@ -145,7 +147,7 @@
 
                     <div id="htmlBlock"> 
                         <pre>
-                           <!-- dynamically populated with HTML code --> 
+                            <!-- dynamically populated with HTML code --> 
                         </pre> 
                     </div>
 

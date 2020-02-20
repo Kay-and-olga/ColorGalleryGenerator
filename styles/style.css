@@ -267,7 +267,7 @@ button {
 }
 
 .wrapper {
-  max-width: 2000px;
+  max-width: 1200px;
   width: 90%;
   margin: 0 auto;
 }
@@ -309,24 +309,45 @@ section h2 {
 
 main .wrapper {
   padding-bottom: 100px;
-  display: -ms-grid;
-  display: grid;
-  /* -ms-grid-rows: 20% (1fr)[2]; */
-  grid-template-rows: 20% repeat(2, 1fr);
-  /* -ms-grid-columns: (1fr)[4]; */
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  grid-template-areas: 
-    ". picker picker ."
-    "gallery gallery gallery sliders"
-    "gallery gallery gallery code";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flexContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 20px;
 }
 
 .colorPicker {
-  /* -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2; */
-  grid-area: picker;
+  width: 60%;
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -428,17 +449,13 @@ main .wrapper {
 }
 
 .gallery {
-  /* -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1; */
-  -ms-grid-column-span: 3;
-  grid-area: gallery;
+  width: 73%;
 }
 
 .galleryGrid {
   display: -ms-grid;
   display: grid;
-  /* -ms-grid-columns: (1fr)[3]; */
+  -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
 }
@@ -451,9 +468,7 @@ main .wrapper {
 }
 
 .sliders {
-  /* -ms-grid-row: 2;
-  -ms-grid-column: 4; */
-  grid-area: sliders;
+  width: 25%;
 }
 
 .sliders form {
@@ -597,7 +612,7 @@ input[type='range']:focus::-webkit-slider-thumb {
 
 input[type='number'] {
   border-radius: 11px;
-  border: 1px solid white;
+  border: 2px solid white;
   height: 40px;
   width: 90%;
   padding: 0 10px;
@@ -607,13 +622,11 @@ input[type='number'] {
 }
 
 input[type='number']:hover, input[type='number']:focus {
-  border: 1px solid #434960;
+  border: 2px solid #434960;
 }
 
 .code {
-  /* -ms-grid-row: 3;
-  -ms-grid-column: 4; */
-  grid-area: code;
+  width: 100%;
   overflow: hidden;
 }
 

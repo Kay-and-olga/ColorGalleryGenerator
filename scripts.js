@@ -212,7 +212,7 @@ app.showSliderInput = function(){
 
     // append on page
     $('#columnAmount').text(`${columnValue}`);
-    $('#gapAmount').text(`${gapValue}`);
+    $('#gapAmount').text(`${gapValue} px`);
 }
 
 

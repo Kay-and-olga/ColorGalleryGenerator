@@ -10,25 +10,33 @@ section{
     }
 }
 
-// add grid layout
 main .wrapper{
     padding-bottom: 100px;
-    display: grid;
-    grid-template-rows: 20% repeat(2, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    grid-template-areas: 
-        ". picker picker ."
-        "gallery gallery gallery sliders"
-        "gallery gallery gallery code";
-        // "gallery gallery sliders sliders"
-        // "gallery gallery code code";
-        
+    @include flex(column, center, center);
+    // display: grid;
+    // grid-template-rows: 20% repeat(2, 1fr);
+    // grid-template-columns: repeat(4, 1fr);
+    // grid-gap: 20px;
+    // grid-template-areas: 
+    //     ". picker picker ."
+    //     "gallery gallery gallery sliders"
+    //     "gallery gallery gallery code";
+    //     // "gallery gallery sliders sliders"
+    //     // "gallery gallery code code";
+    
+}
+
+// flex the layout
+.flexContainer{
+    @include flex(row, space-between, flex-start);
+    margin-bottom: 20px;
 }
 
 // color picker styles
 .colorPicker{
-    grid-area: picker;
+    // grid-area: picker;
+    width: 60%;
+    margin-bottom: 20px;
     @include flex(row, space-between, center);
     
     form{
@@ -105,7 +113,7 @@ main .wrapper{
 
 // gallery section styles
 .gallery{
-    grid-area: gallery;
+    width: 73%;
 }
 
 .galleryGrid{
@@ -124,7 +132,8 @@ main .wrapper{
 
 // overall sliders styles
 .sliders{
-    grid-area: sliders;
+    // grid-area: sliders;
+    width: 25%;
 
     // flex the items into column
     form{
@@ -245,7 +254,7 @@ input[type='range']:focus::-webkit-slider-thumb{
 // number input styles
 input[type='number']{
     border-radius: 11px;
-    border: 1px solid white;
+    border: 2px solid white;
     height: 40px;
     width: 90%;
     padding:0 10px;
@@ -253,13 +262,14 @@ input[type='number']{
     transition: $transition;
 
     @include hover{
-        border: 1px solid $fontColour;
+        border: 2px solid $fontColour;
     }
 }
 
 // code section styles
 .code{
-    grid-area: code;
+    // grid-area: code;
+    width: 100%;
     overflow: hidden;
 
     .codeBlock {
