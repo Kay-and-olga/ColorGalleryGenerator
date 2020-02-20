@@ -92,79 +92,91 @@
     
                 </section>
                 <!-- END OF GALLERY -->
+                
+                <!-- SIDE CONTENT -->
+                <div class="sideContent">
+                    <!-- SLIDERS -->
+                    <section class="sliders">
+        
+                        <h2>Adjust your grid</h2>
+        
+                        <form action="POST">
+        
+                            <label class='columns' for="columns">Columns</label>
+                            <div class="columnSlideContainer">
+                                <input id="columns" type="range" name="gridSlider" min="2" max="5" value="3">
+                                <p id="columnAmount"></p>
+                            </div>
+        
+                            <label class='gap' for="gap">Gap <span>(in px)</span></label>
+                            <div class="gapSlideContainer">
+                                <input id="gap" type="range" name="gridSlider" min='5' max='40' step="5" value="5">
+                                <p id="gapAmount"></p>
+                            </div>
+        
+                            <fieldset>
+                                <legend>Choose orientation</legend>
+        
+                                <input type="radio" name="orientation" id="square" value="squarish">
+                                <label class='square' for="square">Square</label>
+        
+                                <input type="radio" name="orientation" id="landscape" value="landscape">
+                                <label class='landscape' for="landscape">Landscape</label>
+        
+                                <input type="radio" name="orientation" id="portrait" value="portrait">
+                                <label class='portrait' for="portrait">Portrait</label>
+                            </fieldset>
+                            
+                            <label class='imageNumber' for="imageNumber">Amount of images</label>
+                            <input type="number" name="imageNumber" id="imageNumber" min="5" max="20">
+        
+                        </form>
+        
+                    </section>
+                    <!-- END OF SLIDERS -->
     
-    
-                <!-- SLIDERS -->
-                <section class="sliders">
-    
-                    <h2>Adjust your grid</h2>
-    
-                    <form action="POST">
-    
-                        <label class='columns' for="columns">Columns</label>
-                        <div class="columnSlideContainer">
-                            <input id="columns" type="range" name="gridSlider" min="2" max="5" value="3">
-                            <p id="columnAmount"></p>
-                        </div>
-    
-                        <label class='gap' for="gap">Gap</label>
-                        <div class="gapSlideContainer">
-                            <input id="gap" type="range" name="gridSlider" min='5' max='40' step="5" value="5">
-                            <p id="gapAmount"></p>
-                        </div>
-    
-                        <fieldset>
-                            <legend>Choose orientation</legend>
-    
-                            <input type="radio" name="orientation" id="square" value="squarish">
-                            <label class='square' for="square">Square</label>
-    
-                            <input type="radio" name="orientation" id="landscape" value="landscape">
-                            <label class='landscape' for="landscape">Landscape</label>
-    
-                            <input type="radio" name="orientation" id="portrait" value="portrait">
-                            <label class='portrait' for="portrait">Portrait</label>
-                        </fieldset>
-                        
-                        <label class='imageNumber' for="imageNumber">Amount of images</label>
-                        <input type="number" name="imageNumber" id="imageNumber" min="5" max="20">
-    
-                    </form>
-    
-                </section>
-                <!-- END OF SLIDERS -->
+                    <!-- CODE -->
+                    <!-- button to open the modal -->
+                    <button class="modalOpen">Grab the code</button>
+                    <div class="modalContainer">
+                        <section class="code">
+                            <!-- button to close the modal -->
+                            <button class="modalClose"><i class="fas fa-times"></i></button>
+            
+                            <h2>Grab your code</h2>
+                            <div class="codeContainer">
+                                <div class="codeBlock">
+                
+                                    <h3>HTML</h3>
+                
+                                    <div id="htmlBlock"> 
+                                        <pre>
+                                            <!-- dynamically populated with HTML code --> 
+                                        </pre> 
+                                    </div>
+                
+                                    </pre></pre>
+                                </div>
+                
+                                <div class="codeBlock">
+                
+                                    <h3>CSS</h3>
+                
+                                    <div id="cssBlock">
+                                        <!-- dynamically populated with CSS code -->
+                                    </div>
+                                </div>
+                            </div>
+            
+                        </section>
+                    </div>
+                    <!-- END OF CODE -->
+                </div>
+                <!-- END OF SIDE CONTENT -->
+
             </div>
             <!-- END OF FLEX CONTAINER  -->
 
-            <!-- CODE -->
-            <section class="code">
-
-                <h2>Grab your code</h2>
-
-                <div class="codeBlock">
-
-                    <h3>HTML</h3>
-
-                    <div id="htmlBlock"> 
-                        <pre>
-                            <!-- dynamically populated with HTML code --> 
-                        </pre> 
-                    </div>
-
-                    </pre></pre>
-                </div>
-
-                <div class="codeBlock">
-
-                    <h3>CSS</h3>
-
-                    <div id="cssBlock">
-                        <!-- dynamically populated with CSS code -->
-                    </div>
-                </div>
-
-            </section>
-            <!-- END OF CODE -->
 
         </div>
 

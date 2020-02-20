@@ -138,6 +138,7 @@ app.getHtmlCode = function (src, alt) {
     const htmlCode = ``
 
 }
+
 // generates formatted css code for the gallery and displays in on the page
 app.getCssCode = function () {
 
@@ -156,6 +157,20 @@ app.getCssCode = function () {
 }</pre>`;
 
     $('#cssBlock').html(cssCode);
+}
+
+// shows the code modal window when user clicks the button to grab code to copy
+app.showCode = function(){
+    $('.modalOpen').on('click', function(){
+        $('.modalContainer').addClass('show');
+    })
+}
+
+// hides the code when user clicks button to close
+app.hideCode = function () {
+    $('.modalClose').on('click', function () {
+        $('.modalContainer').removeClass('show');
+    })
 }
 // END OF FUNCTIONS THAT DEAL WITH DISPLAYING CODE
 
@@ -212,7 +227,7 @@ app.showSliderInput = function(){
 
     // append on page
     $('#columnAmount').text(`${columnValue}`);
-    $('#gapAmount').text(`${gapValue} px`);
+    $('#gapAmount').text(`${gapValue}`);
 }
 
 
@@ -238,6 +253,13 @@ app.init = function () {
 
     app.getHtmlCode();
     app.getCssCode();
+
+    // call function for when user wants to grab the code
+    app.showCode();
+
+    // call function for when user wants to close the code modal
+    app.hideCode();
+
 }
 
 // document ready
