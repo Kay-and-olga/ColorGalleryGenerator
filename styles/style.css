@@ -715,6 +715,13 @@ input[type='number']:hover, input[type='number']:focus {
   width: 48%;
 }
 
+.code .hiddenHtmlCode,
+.code .hiddenCssCode {
+  position: fixed;
+  width: 0;
+  opacity: 0;
+}
+
 .code h2 {
   text-align: center;
   font-size: 3rem;
@@ -732,6 +739,7 @@ input[type='number']:hover, input[type='number']:focus {
   background-color: #434960;
   color: #EEF3F6;
   border-radius: 11px;
+  font-size: 1.6rem;
 }
 
 .code .selector {

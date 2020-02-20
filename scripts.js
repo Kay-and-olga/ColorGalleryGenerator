@@ -108,6 +108,9 @@ app.displayImages = function (array) {
     })
     htmlCode += '</div>'
     $('#htmlBlock pre').text(htmlCode);
+
+    // set value of input to the html code for copy
+    $('input#hiddenHtmlCode').val(htmlCode);
 }
 
 
@@ -143,8 +146,7 @@ app.getHtmlCode = function (src, alt) {
 app.getCssCode = function () {
 
     const cssCode =
-    `<pre>
-.galleryGrid {
+    `.galleryGrid {
     display: grid;
     grid-template-columns: repeat(${app.columnAmount}, 1fr);
     grid-gap: ${app.gapSize}px;
@@ -154,9 +156,13 @@ app.getCssCode = function () {
     object-fit: cover;
     width: 100%;
     height: 100%;
-}</pre>`;
+}`;
 
-    $('#cssBlock').html(cssCode);
+    $('#cssBlock pre').html(cssCode);
+
+    // set value of input to the css to copy
+    $('input#hiddenCssCode').val(cssCode);
+
 }
 
 // shows the code modal window when user clicks the button to grab code to copy
@@ -172,6 +178,18 @@ app.hideCode = function () {
         $('.modalContainer').removeClass('show');
     })
 }
+
+// copies the code to the clipboard when the copy button is clicked
+app.copy = function(element){
+    let textToCopy = $(element);
+    textToCopy.select();
+    console.log(textToCopy);
+    document.execCommand("copy");
+}
+
+
+
+
 // END OF FUNCTIONS THAT DEAL WITH DISPLAYING CODE
 
 
@@ -231,8 +249,6 @@ app.showSliderInput = function(){
 }
 
 
-
-
 // initializing function
 app.init = function () {
     // show the value of the slider inputs
@@ -259,6 +275,18 @@ app.init = function () {
 
     // call function for when user wants to close the code modal
     app.hideCode();
+
+    // call function for when user wants to copy the html code
+    // app.copy(htmlBlock);
+
+    $('#copyHTML').on('click', function(){
+        app.copy(`input#hiddenHtmlCode`);
+    });
+
+    $('#copyCss').on('click', function () {
+        app.copy(`input#hiddenCssCode`);
+    });
+    
 
 }
 
