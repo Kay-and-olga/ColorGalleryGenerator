@@ -452,6 +452,10 @@ main .wrapper {
   width: 73%;
 }
 
+.gallery h2 {
+  padding-bottom: 10px;
+}
+
 .galleryGrid {
   display: -ms-grid;
   display: grid;
