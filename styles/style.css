@@ -713,6 +713,7 @@ input[type='number']:hover, input[type='number']:focus {
 
 .code .codeBlock {
   width: 48%;
+  position: relative;
 }
 
 .code .hiddenHtmlCode,
@@ -728,10 +729,6 @@ input[type='number']:hover, input[type='number']:focus {
   padding: 10px 0 20px;
 }
 
-.code h3 {
-  padding-bottom: 10px;
-}
-
 .code #htmlBlock,
 .code #cssBlock {
   overflow-x: scroll;
@@ -742,12 +739,44 @@ input[type='number']:hover, input[type='number']:focus {
   font-size: 1.6rem;
 }
 
-.code .selector {
-  color: #87d687;
+.code .flexCopy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 10px;
 }
 
-.code .property {
-  color: #d9c0f1;
+.code #copyCss,
+.code #copyHTML {
+  color: #434960;
+  font-size: 2.4rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: white;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.034);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.034);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.code #copyCss:hover, .code #copyCss:focus,
+.code #copyHTML:hover,
+.code #copyHTML:focus {
+  background-color: #a9aebe;
 }
 
 footer {

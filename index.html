@@ -147,12 +147,14 @@
                             <div class="codeContainer">
                                 <div class="codeBlock">
 
+                                    <!-- hidden inputs for the copy buttons -->
                                     <input type="text" name="" id="hiddenHtmlCode" class="hiddenHtmlCode">
                                     <input type="text" name="" id="hiddenCssCode" class="hiddenCssCode">
 
-                                    <h3>HTML</h3>
-
-                                    <button id="copyHTML">Copy</button>
+                                    <div class="flexCopy">
+                                        <h3>HTML</h3>
+                                        <button id="copyHTML"><i class="far fa-copy"></i></button>
+                                    </div>
                 
                                     <div id="htmlBlock"> 
                                         <pre>
@@ -165,9 +167,10 @@
                 
                                 <div class="codeBlock">
                 
-                                    <h3>CSS</h3>
-
-                                    <button id="copyCss">Copy</button>
+                                    <div class="flexCopy">
+                                        <h3>CSS</h3>
+                                        <button id="copyCss"><i class="far fa-copy"></i></button>
+                                    </div>
                                     
                 
                                     <div id="cssBlock">

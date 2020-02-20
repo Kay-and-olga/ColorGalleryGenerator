@@ -122,7 +122,7 @@ app.getImages = function () {
         method: 'GET',
         dataType: 'json',
         data: {
-            client_id: app.apiKeyKay,
+            client_id: app.apiKey,
             query: `${app.imageColor}`,
             count: `${app.imageAmount}`,
             orientation: `${app.imageOrientation}`,
@@ -179,17 +179,16 @@ app.hideCode = function () {
     })
 }
 
-// copies the code to the clipboard when the copy button is clicked
-app.copy = function(element){
-    let textToCopy = $(element);
+// copies the code to the clipboard when the copy buttons are clicked
+// takes parameter of the input to take value of 
+// got help with this from:
+// https://codepen.io/shaikmaqsood/pen/XmydxJ
+// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard
+app.copyCode = function(element){
+    const textToCopy = $(element);
     textToCopy.select();
-    console.log(textToCopy);
     document.execCommand("copy");
 }
-
-
-
-
 // END OF FUNCTIONS THAT DEAL WITH DISPLAYING CODE
 
 
@@ -276,15 +275,14 @@ app.init = function () {
     // call function for when user wants to close the code modal
     app.hideCode();
 
-    // call function for when user wants to copy the html code
-    // app.copy(htmlBlock);
-
+    // call function for when user clicks button to copy the html code
     $('#copyHTML').on('click', function(){
-        app.copy(`input#hiddenHtmlCode`);
+        app.copyCode(`input#hiddenHtmlCode`);
     });
 
+    // call function for when user clicks button to copy the css code
     $('#copyCss').on('click', function () {
-        app.copy(`input#hiddenCssCode`);
+        app.copyCode(`input#hiddenCssCode`);
     });
     
 
