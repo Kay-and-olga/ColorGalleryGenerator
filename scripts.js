@@ -193,9 +193,6 @@ app.changeColumns = function () {
         app.columnAmount = parseInt($(this).val());
 
         // updates the gallery container's styles
-        // $('.galleryGrid').css('grid-template-columns', `repeat(${columnAmount}, 1fr`);
-
-        
         $('.galleryGrid').css('grid-template-columns', `repeat(${app.columnAmount}, 1fr`);
         // call the show slider input function
         app.showSliderInput();
