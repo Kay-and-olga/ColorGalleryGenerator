@@ -1,22 +1,44 @@
 // footer styles
-footer{
+footer {
     background-color: $fontColour;
     color: $secondaryColour;
     padding: 20px 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
 
-    .wrapper{
-        @include flex(row, center, center);
+    .wrapper {
+        @include flex(column, center, center);
+    }
+
+    // only shows up on mobile
+    .socialContainerMobile {
+        display: none;
+    }
+    
+    .social {
+        @include flex(column, center, center);
+
+        ul{
+            @include flex(row, space-between, center);
+            width: 100%;
+        }
+
+        a {
+            font-size: 2.5rem;
+            padding: 10px 20px;
+        }
+    }
+
+    .copyright { 
+        font-size: 1.5rem;
     }
 }
 
-// flex the items inside 
-.social{
-    @include flex(row, center, center);
-    ul{
-        @include flex(row, space-between, center);
-    }
-}
+// footer media q's
+
+// tablet: 
+/* 
+.copyright {
+    border-top: 1px solid $secondaryColour;
+    padding-top: 20px;
+    margin-top: 10px;
+}*/

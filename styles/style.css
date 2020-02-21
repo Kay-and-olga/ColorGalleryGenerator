@@ -235,6 +235,18 @@ html {
   overflow: hidden;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #434960;
+  font-size: 2rem;
+  position: relative;
+  line-height: 1.5;
+}
+
 *,
 h1 {
   padding: 0;
@@ -245,10 +257,6 @@ img {
   display: block;
   width: 100%;
   height: auto;
-}
-
-html {
-  font-size: 62.5%;
 }
 
 ul {
@@ -266,20 +274,6 @@ button {
   cursor: pointer;
 }
 
-.wrapper {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  color: #434960;
-  font-size: 2rem;
-  position: relative;
-  line-height: 1.5;
-}
-
 h1,
 h2,
 legend,
@@ -288,6 +282,12 @@ h3 {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
+}
+
+.wrapper {
+  max-width: 2000px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 header {
@@ -440,9 +440,9 @@ main .wrapper {
   width: 0;
 }
 
-.colorPicker input[type="radio"]:checked + label,
-.colorPicker input[type="radio"]:hover + label,
-.colorPicker input[type="radio"]:focus + label {
+.colorPicker input[type='radio']:checked + label,
+.colorPicker input[type='radio']:hover + label,
+.colorPicker input[type='radio']:focus + label {
   cursor: pointer;
   -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1), 0 0 0 5px #d2dbe0;
           box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1), 0 0 0 5px #d2dbe0;
@@ -541,9 +541,9 @@ main .wrapper {
   transition: all 0.5s ease;
 }
 
-.sliders fieldset input[type="radio"]:checked + label,
-.sliders fieldset input[type="radio"]:hover + label,
-.sliders fieldset input[type="radio"]:focus + label {
+.sliders fieldset input[type='radio']:checked + label,
+.sliders fieldset input[type='radio']:hover + label,
+.sliders fieldset input[type='radio']:focus + label {
   border: 2px solid #434960;
   cursor: pointer;
 }
@@ -739,7 +739,7 @@ input[type='number']:hover, input[type='number']:focus {
   font-size: 1.6rem;
 }
 
-.code .flexCopy {
+.flexCopy {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -758,8 +758,8 @@ input[type='number']:hover, input[type='number']:focus {
   padding-bottom: 10px;
 }
 
-.code #copyCss,
-.code #copyHTML {
+#copyCss,
+#copyHTML {
   color: #434960;
   font-size: 2.4rem;
   width: 50px;
@@ -773,19 +773,104 @@ input[type='number']:hover, input[type='number']:focus {
   transition: all 0.5s ease;
 }
 
-.code #copyCss:hover, .code #copyCss:focus,
-.code #copyHTML:hover,
-.code #copyHTML:focus {
+#copyCss:hover, #copyCss:focus,
+#copyHTML:hover,
+#copyHTML:focus {
   background-color: #a9aebe;
+}
+
+.socialContainer {
+  position: fixed;
+  left: 0;
+  top: 5%;
+}
+
+.socialContainer .social {
+  color: #EEF3F6;
+  margin: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: default;
+          flex-direction: default;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: default;
+      -ms-flex-align: default;
+          align-items: default;
+}
+
+.socialContainer .social .name {
+  padding: 10px;
+  background-color: #434960;
+  min-width: 86px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: default;
+          flex-direction: default;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+.socialContainer .social .name i {
+  font-size: 1.3rem;
+  position: relative;
+  top: 2px;
+  left: 10px;
+  margin-right: 15px;
+}
+
+.socialContainer .social ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  background-color: #434960;
+  position: relative;
+  left: -100%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.socialContainer .social a {
+  padding: 10px 15px;
+}
+
+.socialContainer .social a:hover, .socialContainer .social a:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 footer {
   background-color: #434960;
   color: #D2DBE0;
   padding: 20px 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
 }
 
@@ -795,10 +880,10 @@ footer .wrapper {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -807,16 +892,20 @@ footer .wrapper {
           align-items: center;
 }
 
-.social {
+footer .socialContainerMobile {
+  display: none;
+}
+
+footer .social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -825,7 +914,7 @@ footer .wrapper {
           align-items: center;
 }
 
-.social ul {
+footer .social ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -841,8 +930,24 @@ footer .wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
+footer .social a {
+  font-size: 2.5rem;
+  padding: 10px 20px;
+}
+
+footer .copyright {
+  font-size: 1.5rem;
+}
+
+/* 
+.copyright {
+    border-top: 1px solid $secondaryColour;
+    padding-top: 20px;
+    margin-top: 10px;
+}*/
 @media (max-width: 1050px) {
   .gallery {
     width: 65%;

@@ -1,11 +1,3 @@
-//* The ajax request takes in a query of color in a string format(e.g.‘red’), and returns an array of 10 image objects matching that match the query
-
-//* The image urls are fed into src attribute of dynamically created img elements, which are appended to a grid container
-
-//* The user can use sliders to adjust the number of grid rows, columns and gap size.The styles of the grid container are changed with the.css() method.The sliders themselves are < input type =”range”> elements, which have.on(‘change’) event listener on them.
-
-//* The HTML and CSS of the grid container are retrieved with .html() and.css() methods, these values are stored in variables, which are then appended to containers displaying code.The user can copy the code with ctrl + c(Stretch goal: add a button that will copy the whole code block to clipboard on click)
-
 // namespace object
 const app = {};
 
@@ -23,12 +15,6 @@ app.imageAmount = 10;
 // stores values for amount of columns and gap size of the gallery chosen by the user
 app.columnAmount = 3;
 app.gapSize = 5;
-
-
-//? variables to hold code blocks to display and allow the user to copy
-app.gridCodeHtml;
-app.imgHtmlArr = [];
-//?
 
 
 // FUNCTIONS THAT DEAL WITH LOADING IMAGES
@@ -87,12 +73,15 @@ app.chooseAmount = function () {
 }
 
 
-// make function to display the images in grid
+// make function to display the images in grid and grabs html code to display on the page
 app.displayImages = function (array) {
-    
+
+    // stores html code to display on the page for user to copy
     let htmlCode = '<div class="galleryGrid"> \n';
+
     // for each item in array, display the images
     array.forEach(function (currentItem) {
+
         // make variable for the image
         const imageUrl = currentItem.urls.regular;
         // make variable for the alt
@@ -101,12 +90,16 @@ app.displayImages = function (array) {
         // the html to append
         const htmlToAppend = 
         `\t <img class="galleryImg" src='${imageUrl} alt='${altText}'> \n`;
+
         // append the html to the page
         $('.galleryGrid').append(htmlToAppend);
         
+        // add code to the page for the user to copy
         htmlCode += htmlToAppend;
     })
-    htmlCode += '</div>'
+
+    htmlCode += '</div>';
+    // appends the generated code block to the page
     $('#htmlBlock pre').text(htmlCode);
 
     // set value of input to the html code for copy
@@ -137,10 +130,6 @@ app.getImages = function () {
 
 
 // FUNCTIONS THAT DEAL WITH DISPLAYING CODE
-app.getHtmlCode = function (src, alt) {
-    const htmlCode = ``
-
-}
 
 // generates formatted css code for the gallery and displays in on the page
 app.getCssCode = function () {
@@ -234,7 +223,7 @@ app.changeGap = function () {
         app.getCssCode();
     })
 }
-// END OF FUNCTIONS THAT DEAL WITH STYLING THE GRID
+
 
 // function that displays the value of the slider inputs
 app.showSliderInput = function(){
@@ -248,8 +237,38 @@ app.showSliderInput = function(){
 }
 
 
+// END OF FUNCTIONS THAT DEAL WITH STYLING THE GRID
+
+
+
+
+// MISC FUNCTIONS
+app.openSocialOnHover = function() {
+
+    $('#kay').on('mouseenter', function() {
+        $('#kay ul').css('left', '0');
+    })
+
+    $('#kay').on('mouseleave', function () {
+        $('#kay ul').css('left', '-100%');
+    })
+
+    $('#olga').on('mouseenter', function () {
+        $('#olga ul').css('left', '0');
+    })
+    
+    $('#olga').on('mouseleave', function () {
+        $('#olga ul').css('left', '-100%');
+    })
+    
+}
+// END OF MISC FUNCTIONS
+
+
 // initializing function
 app.init = function () {
+    // shows social links on hover
+    app.openSocialOnHover();
     // show the value of the slider inputs
     app.showSliderInput();
     // loads images into the grid on page load
@@ -266,7 +285,7 @@ app.init = function () {
     // change the size of grid gap
     app.changeGap();
 
-    app.getHtmlCode();
+    // grabs gallery code for the user to copy
     app.getCssCode();
 
     // call function for when user wants to grab the code

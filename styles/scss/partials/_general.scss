@@ -1,3 +1,16 @@
+// default body size
+html{
+    font-size: 62.5%;
+}
+
+// default body styles
+body{
+    font-family: $bodyFont;
+    color: $fontColour;
+    font-size: 2rem;
+    position: relative;
+    line-height: 1.5;
+}
 // remove default padding and margin
 *,
 h1{
@@ -10,11 +23,6 @@ img{
     display: block;
     width: 100%;
     height: auto;
-}
-
-// default body size
-html{
-    font-size: 62.5%;
 }
 
 // removes the bullets
@@ -35,22 +43,6 @@ button{
     cursor: pointer;
 }
 
-// wrapper styles
-.wrapper{
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
-}
-
-// default body styles
-body{
-    font-family: $bodyFont;
-    color: $fontColour;
-    font-size: 2rem;
-    position: relative;
-    line-height: 1.5;
-}
-
 // heading styles
 h1,
 h2,
@@ -61,3 +53,11 @@ h3 {
     text-transform: uppercase;
     font-weight: 400;
 }
+
+// wrapper styles
+.wrapper{
+    max-width: 2000px;
+    width: 90%;
+    margin: 0 auto;
+}
+
