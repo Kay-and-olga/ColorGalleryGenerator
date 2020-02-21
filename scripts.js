@@ -227,11 +227,22 @@ app.showSliderInput = function(){
 // MISC FUNCTIONS
 app.openSocialOnHover = function() {
 
-    $('.social').on('click', function() {
-        console.log('click');
-        $('.social ul').addClass('openOnHover');
+    $('#kay').on('mouseenter', function() {
+        $('#kay ul').css('left', '0');
     })
 
+    $('#kay').on('mouseleave', function () {
+        $('#kay ul').css('left', '-100%');
+    })
+
+    $('#olga').on('mouseenter', function () {
+        $('#olga ul').css('left', '0');
+    })
+    
+    $('#olga').on('mouseleave', function () {
+        $('#olga ul').css('left', '-100%');
+    })
+    
 }
 // END OF MISC FUNCTIONS
 
@@ -257,10 +268,7 @@ app.init = function () {
     app.changeGap();
 
     // grabs gallery code for the user to copy
-    app.getHtmlCode();
     app.getCssCode();
-
-    
 }
 
 // document ready

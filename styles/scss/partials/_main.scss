@@ -292,6 +292,7 @@ input[type='number']{
             background-color: $fontColour;
             min-width: 86px;
             @include flex(default, space-between, center);
+            z-index: 2;
 
             i {
                 font-size: 1.3rem;
@@ -300,21 +301,27 @@ input[type='number']{
                 left: 10px;
                 margin-right: 15px;
             }
-
         }
+    // .social:hover + ul {
+    //         left: 0;
+    // }
 
         ul {
             @include flex();
             background-color: $fontColour;
             position: relative;
-            // left: -100%;
-            transition: all 0.4s ease;
+            left: -100%;
+            transition: all 0.5s ease;
+
+            .openOnHover {
+                left: 0;
+            }
         }
 
         a {
             padding: 10px 15px;
 
-            @include hover {
+            @include hover() {
                 transform: scale(1.1);
             }
         }
