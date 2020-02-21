@@ -44,9 +44,31 @@
     .sideContent{
         width: 40%;
     }
+
+    // hidden on tablet & mobile
+    .socialContainer {
+        display: none;
+    }
+
+    // FOOTER STYLES
+    footer {
+        // shown on tablet & mobile
+        .socialContainerMobile {
+            display: block;
+        }
+
+        .copyright {
+            border-top: 1px solid $secondaryColour;
+            padding-top: 20px;
+            margin-top: 10px;
+        }
+    }
 }
 
 @media (max-width: 670px){
+    h1 {
+        font-size: 4rem;
+    }
 
     // HEADER STYLES
     header{
@@ -113,6 +135,7 @@
 }
 
 @media (max-width: 550px){
+    
 
     // COLOUR PICKER STYLES
     .colorPicker{

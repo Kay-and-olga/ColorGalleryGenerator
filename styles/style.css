@@ -284,6 +284,10 @@ h3 {
   font-weight: 400;
 }
 
+h1 {
+  font-size: 5rem;
+}
+
 .wrapper {
   max-width: 2000px;
   width: 90%;
@@ -431,7 +435,8 @@ main .wrapper {
 }
 
 .colorPicker label.cheese {
-  background-color: orange;
+  background-image: url(../assets/cheesePattern.png);
+  background-size: contain;
 }
 
 .colorPicker input[type='radio'] {
@@ -729,8 +734,8 @@ input[type='number']:hover, input[type='number']:focus {
   padding: 10px 0 20px;
 }
 
-.code #htmlBlock,
-.code #cssBlock {
+.code .htmlBlock,
+.code .cssBlock {
   overflow-x: scroll;
   padding: 15px;
   background-color: #434960;
@@ -758,8 +763,8 @@ input[type='number']:hover, input[type='number']:focus {
   padding-bottom: 10px;
 }
 
-#copyCss,
-#copyHTML {
+.copyCss,
+.copyHTML {
   color: #434960;
   font-size: 2.4rem;
   width: 50px;
@@ -773,9 +778,9 @@ input[type='number']:hover, input[type='number']:focus {
   transition: all 0.5s ease;
 }
 
-#copyCss:hover, #copyCss:focus,
-#copyHTML:hover,
-#copyHTML:focus {
+.copyCss:hover, .copyCss:focus,
+.copyHTML:hover,
+.copyHTML:focus {
   background-color: #a9aebe;
 }
 
@@ -942,12 +947,6 @@ footer .copyright {
   font-size: 1.5rem;
 }
 
-/* 
-.copyright {
-    border-top: 1px solid $secondaryColour;
-    padding-top: 20px;
-    margin-top: 10px;
-}*/
 @media (max-width: 1050px) {
   .gallery {
     width: 65%;
@@ -987,9 +986,23 @@ footer .copyright {
   .sideContent {
     width: 40%;
   }
+  .socialContainer {
+    display: none;
+  }
+  footer .socialContainerMobile {
+    display: block;
+  }
+  footer .copyright {
+    border-top: 1px solid #D2DBE0;
+    padding-top: 20px;
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 670px) {
+  h1 {
+    font-size: 4rem;
+  }
   header {
     padding: 40px 0 30px;
   }
