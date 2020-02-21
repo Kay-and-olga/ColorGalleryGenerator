@@ -703,10 +703,6 @@ input[type='number']:hover, input[type='number']:focus {
   transition: all 0.5s ease;
 }
 
-.socialContainer .social ul .openOnHover {
-  left: 0;
-}
-
 .socialContainer .social a {
   padding: 10px 15px;
 }
@@ -729,10 +725,10 @@ footer .wrapper {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -741,16 +737,20 @@ footer .wrapper {
           align-items: center;
 }
 
-.social {
+footer .socialContainerMobile {
+  display: none;
+}
+
+footer .social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -759,7 +759,7 @@ footer .wrapper {
           align-items: center;
 }
 
-.social ul {
+footer .social ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -775,4 +775,21 @@ footer .wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
+
+footer .social a {
+  font-size: 2.5rem;
+  padding: 10px 20px;
+}
+
+footer .copyright {
+  font-size: 1.5rem;
+}
+
+/* 
+.copyright {
+    border-top: 1px solid $secondaryColour;
+    padding-top: 20px;
+    margin-top: 10px;
+}*/
