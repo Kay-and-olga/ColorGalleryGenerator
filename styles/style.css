@@ -842,3 +842,131 @@ footer .wrapper {
       -ms-flex-align: center;
           align-items: center;
 }
+
+@media (max-width: 1050px) {
+  .gallery {
+    width: 65%;
+  }
+  .sideContent {
+    width: 30%;
+  }
+}
+
+@media (max-width: 860px) {
+  .wrapper {
+    width: 95%;
+  }
+  .colorPicker {
+    width: 80%;
+  }
+  .flexContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .gallery {
+    width: 90%;
+  }
+  .sideContent {
+    width: 40%;
+  }
+}
+
+@media (max-width: 670px) {
+  header {
+    padding: 40px 0 30px;
+  }
+  .colorPicker {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .colorPicker form {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .colorPicker label {
+    width: 25px;
+    height: 25px;
+    padding: 15px;
+  }
+  .gallery {
+    width: 100%;
+  }
+  .sideContent {
+    width: 60%;
+  }
+  .code {
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    border-radius: 0px;
+    padding-bottom: 30px;
+  }
+  .code .codeContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .code .codeBlock {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .colorPicker label {
+    margin: 10px 22px;
+  }
+  .sideContent {
+    width: 100%;
+  }
+  .columnSlideContainer,
+  .gapSlideContainer {
+    width: 80%;
+  }
+  input[type='range'] {
+    width: 80%;
+  }
+  .code .codeBlock {
+    width: 95%;
+  }
+}

@@ -122,7 +122,7 @@ app.getImages = function () {
         method: 'GET',
         dataType: 'json',
         data: {
-            client_id: app.apiKey,
+            client_id: app.apiKeyKay,
             query: `${app.imageColor}`,
             count: `${app.imageAmount}`,
             orientation: `${app.imageOrientation}`,

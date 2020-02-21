@@ -1,0 +1,151 @@
+@media (max-width: 1050px){
+
+    // MAIN SECTION STYLES
+    .gallery{
+        width: 65%;
+    }
+
+    // make side content bigger
+    .sideContent{
+        width: 30%;
+    }
+
+}
+
+@media (max-width: 860px){
+
+    // OVERALL STYLES
+
+    // make wrapper bigger
+    .wrapper{
+        width: 95%;
+    }
+
+    // COLOUR PICKERS STYLES
+
+    // make the section bigger
+    .colorPicker{
+        width: 80%;
+    }
+
+    // MAIN SECTION STYLES
+    
+    // make into column
+    .flexContainer{
+        @include flex(column-reverse, center, center);
+    }
+
+    // make the gallery bigger
+    .gallery{
+        width: 90%;
+    }
+
+    // make side content bigger
+    .sideContent{
+        width: 40%;
+    }
+}
+
+@media (max-width: 670px){
+
+    // HEADER STYLES
+    header{
+        padding: 40px 0 30px;
+    }
+
+    // COLOUR PICKERS STYLES
+
+    // make the section bigger
+    .colorPicker{
+        width: 100%;
+
+        // make into column
+        @include flex(column, center, center);
+
+        // change width of the form
+        form{
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        // make the labels bigger to press
+        label{
+            width: 25px;
+            height: 25px;
+            padding: 15px;
+        }
+    }
+
+    // MAIN SECTION STYLES
+
+    // make the gallery bigger
+    .gallery{
+        width: 100%;
+    }
+
+    // make side content bigger
+    .sideContent{
+        width: 60%;
+    }
+
+    // MODAL WINDOW STYLES
+
+    // make it take up entire window and scroll
+    .code{
+        overflow: scroll;
+        width: 100%;
+        height: 100%;
+        margin: 0px auto;
+        border-radius: 0px;
+        padding-bottom: 30px;
+
+        .codeContainer{
+            // make into a column
+            @include flex(column, center, center);
+        }
+
+        // change sizes of blocks of code
+        .codeBlock {
+            width: 90%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 550px){
+
+    // COLOUR PICKER STYLES
+    .colorPicker{
+        // space out the labels
+        label{
+            margin: 10px 22px;
+        }
+    }
+
+    // MAIN SECTION STYLES
+
+    // make side content bigger
+    .sideContent{
+        width: 100%;
+    }
+
+    // change width of the slider containers
+    .columnSlideContainer,
+    .gapSlideContainer{
+        width: 80%;
+    }
+
+    // make range bigger
+    input[type='range']{
+        width: 80%;
+    }
+
+    // MODAL WINDOW STYLES
+    .code{
+        // change sizes of blocks of code
+        .codeBlock {
+            width: 95%;
+        }
+    }
+}
+
