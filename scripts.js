@@ -46,7 +46,6 @@ app.chooseOrientation = function () {
 
         // assign the value to the global orientation variable
         app.imageOrientation = $(this).val();
-        console.log(app.imageOrientation);
 
         // call function to get images from api
         app.getImages()
@@ -64,7 +63,6 @@ app.chooseAmount = function () {
 
         // assign the value to the global image amount variable
         app.imageAmount = $(this).val();
-        console.log(app.imageAmount);
 
         // call function to get images from api
         app.getImages();
@@ -89,7 +87,7 @@ app.displayImages = function (array) {
 
         // the html to append
         const htmlToAppend = 
-        `\t <img class="galleryImg" src='${imageUrl} alt='${altText}'> \n`;
+        `\t <div> <img class="galleryImg" src='${imageUrl} alt='${altText}'> </div> \n`;
 
         // append the html to the page
         $('.galleryGrid').append(htmlToAppend);
@@ -209,7 +207,6 @@ app.changeGap = function () {
 
         // stores the amount of columns chosen by the user
         app.gapSize = parseInt($(this).val());
-        console.log(app.gapSize);
         // updates the gallery container's styles
         $('.galleryGrid').css('grid-gap', `${app.gapSize}px`);
 

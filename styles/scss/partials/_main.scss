@@ -223,41 +223,138 @@ main .wrapper{
 }
 
 // styles and removing default followed guide from: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
-input[type='range']{
-    // removes styling so can make custom
+// .slider{
+//     // removes styling so can make custom
+//     -webkit-appearance: none;
+//     // specific width needed for FF
+//     width: 75%;
+//     // would be white in chrome
+//     background-color: transparent;
+
+//     // styles for the track
+//     &::-moz-range-track,
+//     &::-webkit-slider-runnable-track{
+//         height: 2px;
+//         border-radius: 1.5px;
+//         background-color: $fontColour;
+//     }
+
+//     // styles for the thumb
+//     &::-moz-range-thumb,
+//     &::-webkit-slider-thumb{
+//         cursor: pointer;
+//         -webkit-appearance: none;
+//         width: 12px;
+//         height: 12px;
+//         background-color: $primaryColour;
+//         border: 2px solid $fontColour;
+//         transition: $transition;
+//     }
+
+// }
+
+input[type=range].slider{
     -webkit-appearance: none;
-    // specific width needed for FF
-    width: 75%;
-    // would be white in chrome
-    background-color: transparent;
+    width: 100%;
+    margin: 5.7px 0;
+    // background: transparent;
+    height: 0.6px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #434960;
+    border-radius: 0px;
+    border: 0.1px solid rgba(1, 1, 1, 0.96);
+  }
+  input[type=range].slider:focus {
+    outline: none;
+  }
+  input[type=range].slider::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 0.6px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #434960;
+    border-radius: 0px;
+    border: 0.1px solid rgba(1, 1, 1, 0.96);
+  }
+  input[type=range].slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    box-shadow: 0px 0px 0px rgba(0, 0, 62, 0), 0px 0px 0px rgba(0, 0, 88, 0);
+    border: 2.9px solid #434960;
+    height: 12px;
+    width: 12px;
+    border-radius: 50px;
+    background: #eef3f6;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5.8px;
+  }
+  input[type=range].slider:focus::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    background: #4b526c;
+  }
+  input[type=range].slider::-moz-range-track {
+    width: 100%;
+    height: 0.6px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #434960;
+    border-radius: 0px;
+    border: 0.1px solid rgba(1, 1, 1, 0.96);
+  }
+  input[type=range].slider::-moz-range-thumb {
+    box-shadow: 0px 0px 0px rgba(0, 0, 62, 0), 0px 0px 0px rgba(0, 0, 88, 0);
+    border: 2.9px solid #434960;
+    height: 12px;
+    width: 12px;
+    border-radius: 50px;
+    background: #eef3f6;
+    cursor: pointer;
+  }
+  input[type=range].slider::-ms-track {
+    width: 100%;
+    height: 0.6px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type=range].slider::-ms-fill-lower {
+    background: #3b4054;
+    border: 0.1px solid rgba(1, 1, 1, 0.96);
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  }
+  input[type=range].slider::-ms-fill-upper {
+    background: #434960;
+    border: 0.1px solid rgba(1, 1, 1, 0.96);
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  }
+  input[type=range].slider::-ms-thumb {
+    box-shadow: 0px 0px 0px rgba(0, 0, 62, 0), 0px 0px 0px rgba(0, 0, 88, 0);
+    border: 2.9px solid #434960;
+    height: 12px;
+    width: 12px;
+    border-radius: 50px;
+    background: #eef3f6;
+    cursor: pointer;
+    height: 0.6px;
+  }
+  input[type=range].slider:focus::-ms-fill-lower {
+    background: #434960;
+  }
+  input[type=range].slider:focus::-ms-fill-upper {
+    background: #4b526c;
+  }
 
-    // styles for the track
-    &::-moz-range-track,
-    &::-webkit-slider-runnable-track{
-        height: 2px;
-        border-radius: 1.5px;
-        background-color: $fontColour;
-    }
-
-    // styles for the thumb
-    &::-moz-range-thumb,
-    &::-webkit-slider-thumb{
-        cursor: pointer;
-        -webkit-appearance: none;
-        width: 12px;
-        height: 12px;
-        background-color: $primaryColour;
-        border: 2px solid $fontColour;
-        transition: $transition;
-    }
-
-}
 
 // add focus states to the thumb of the slider
-input[type='range']:hover::-moz-range-thumb,
-input[type='range']:focus::-moz-range-thumb,
-input[type='range']:hover::-webkit-slider-thumb,
-input[type='range']:focus::-webkit-slider-thumb{
+.slider:hover::-moz-range-thumb,
+.slider:focus::-moz-range-thumb,
+.slider:hover::-webkit-slider-thumb,
+.slider:focus::-webkit-slider-thumb{
     box-shadow: inset 0 1px 5px rgba(0,0,0, .1), 0 0 0 5px rgba(210, 219, 224, 0.589);
 }
 

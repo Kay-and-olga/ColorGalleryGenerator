@@ -105,9 +105,22 @@
         width: 100%;
     }
 
+    // MAIN SECTION STYLES
+
     // make side content bigger
     .sideContent{
-        width: 60%;
+        width: 100%;
+    }
+
+    // change width of the slider containers
+    .columnSlideContainer,
+    .gapSlideContainer{
+        width: 80%;
+    }
+
+    // make range bigger
+    .slider{
+        width: 80%;
     }
 
     // MODAL WINDOW STYLES
@@ -135,6 +148,11 @@
 }
 
 @media (max-width: 550px){
+
+    //              HEADER STYLES
+    header p{
+        width: 100%;
+    }
     
 
     // COLOUR PICKER STYLES
@@ -143,24 +161,6 @@
         label{
             margin: 10px 22px;
         }
-    }
-
-    // MAIN SECTION STYLES
-
-    // make side content bigger
-    .sideContent{
-        width: 100%;
-    }
-
-    // change width of the slider containers
-    .columnSlideContainer,
-    .gapSlideContainer{
-        width: 80%;
-    }
-
-    // make range bigger
-    input[type='range']{
-        width: 80%;
     }
 
     // MODAL WINDOW STYLES

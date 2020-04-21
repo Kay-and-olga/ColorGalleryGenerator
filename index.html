@@ -20,6 +20,7 @@
     <header>
         <div class="wrapper">
             <h1>Color Grid Generator</h1>
+            <p>First choose a colour scheme for the photos, then edit your grid to fit your needs. You can even copy the code for your own project!</p>
         </div>
     </header>
     <!-- END OF HEADER -->
@@ -102,15 +103,15 @@
         
                         <form action="POST">
         
-                            <label class='columns' for="columns">Columns</label>
+                            <label for="columns">Columns</label>
                             <div class="columnSlideContainer">
-                                <input id="columns" type="range" name="gridSlider" min="2" max="5" value="3">
+                                <input class="slider" id="columns" type="range" name="gridSlider" min="2" max="5" value="3">
                                 <p id="columnAmount"></p>
                             </div>
         
-                            <label class='gap' for="gap">Gap <span>(in px)</span></label>
+                            <label for="gap">Gap <span>(in px)</span></label>
                             <div class="gapSlideContainer">
-                                <input id="gap" type="range" name="gridSlider" min='5' max='40' step="5" value="5">
+                                <input class="slider" id="gap" type="range" name="gridSlider" min='5' max='40' step="5" value="5">
                                 <p id="gapAmount"></p>
                             </div>
         
