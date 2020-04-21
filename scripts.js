@@ -89,7 +89,7 @@ app.displayImages = function (array) {
 
         // the html to append
         const htmlToAppend = 
-        `\t <img class="galleryImg" src='${imageUrl} alt='${altText}'> \n`;
+        `\t <div> <img class="galleryImg" src='${imageUrl} alt='${altText}'> </div> \n`;
 
         // append the html to the page
         $('.galleryGrid').append(htmlToAppend);
@@ -115,7 +115,7 @@ app.getImages = function () {
         method: 'GET',
         dataType: 'json',
         data: {
-            client_id: app.apiKeyKay,
+            client_id: app.apiKey,
             query: `${app.imageColor}`,
             count: `${app.imageAmount}`,
             orientation: `${app.imageOrientation}`,
