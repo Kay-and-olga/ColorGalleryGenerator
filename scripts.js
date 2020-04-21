@@ -4,6 +4,7 @@ const app = {};
 // our api key
 app.apiKey = '_3kOV9_qSimG_aJSFZFK_u2AIEsu5eyM4HAFOQ-OB-Y';
 app.apiKeyKay = 'kAOrK_X8Er74XeTEqGJae_ti3NK45tPvRRpxrT-2U7M';
+app.apiKeyOlga = 'BzOc2vHY6FZSpcD39Wy69XyKiMK4WkbgLMqhO1bYFsE';
 
 
 
@@ -53,22 +54,41 @@ app.chooseOrientation = function () {
     })
 }
 
+// update amount of images
+app.updateAmount = function(){
+
+    // empty the grid container
+    $('.galleryGrid').empty();
+
+    // assign the value to the global image amount variable
+    app.imageAmount = $('#imageNumber').val();
+
+    // call function to get images from api
+    app.getImages();
+}
+
 
 // user can select how many images they want to load (5-20 is an acceptable value)
 app.chooseAmount = function () {
 
     $('#imageNumber').on('change', function () {
 
-        // empty the grid container
-        $('.galleryGrid').empty();
+        // call function to update amount of images
+        app.updateAmount();
 
-        // assign the value to the global image amount variable
-        app.imageAmount = $(this).val();
-        console.log(app.imageAmount);
+    })
 
-        // call function to get images from api
-        app.getImages();
+    $('#imageNumber').on('keypress', function(e) {
 
+        // if enter key, then prevent default and update number
+        if(e.keyCode === 13){
+
+            e.preventDefault();
+
+            // call function to update amount of images
+            app.updateAmount(); 
+
+        } 
     })
 }
 
@@ -115,7 +135,7 @@ app.getImages = function () {
         method: 'GET',
         dataType: 'json',
         data: {
-            client_id: app.apiKey,
+            client_id: app.apiKeyOlga,
             query: `${app.imageColor}`,
             count: `${app.imageAmount}`,
             orientation: `${app.imageOrientation}`,
